@@ -1,6 +1,9 @@
 /* Rebuild 08.06.2019 */
 
 package gui;
+import LogicJpanel.CopyText;
+import LogicJpanel.FindText;
+
 import javax.swing.*;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -34,6 +37,7 @@ public class MainJpanel extends JPanel
     //
     JFileChooser fileChooser_open = new JFileChooser();
     JFileChooser fileChooser_save = new JFileChooser();
+
     FileNameExtensionFilter filter_1 = new FileNameExtensionFilter("TxT", "txt");
 
     FileReader fileReader = null;
@@ -45,26 +49,27 @@ public class MainJpanel extends JPanel
 
     String data_string_date_format = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(data_string_date_format);
+
     String date_y_m_d = simpleDateFormat.format(new Date());
 
-    Font font_menu_1 = new Font("Arial", Font.PLAIN, 14);
+    Font font_menu_1 = new Font("Arial", Font.PLAIN, 11);
 
-    Font font_menuitem_1 = new Font("Arial", Font.PLAIN, 12);
-    Font font_menuitem_2 = new Font("Arial", Font.BOLD, 12);
+    Font font_menuitem_1 = new Font("Arial", Font.PLAIN, 10);
+    Font font_menuitem_2 = new Font("Arial", Font.BOLD, 10);
 
     /////
-    Font font_textArea_redactor_1 = new Font("Arial", Font.PLAIN, 16);
+    Font font_textArea_redactor_1 = new Font("Consolas", Font.PLAIN, 16);
 
     Font test_1 = new Font("Arial", Font.PLAIN, 7);
 
     Font font_label_1 = new Font("Arial", Font.PLAIN, 14);
 
     JMenuBar menubar_1 = new JMenuBar();
-    JMenu menu_1 = new JMenu("  File  ");
-    JMenu menu_2 = new JMenu("  Editing  ");
-    JMenu menu_3 = new JMenu("  Settings  ");
-    JMenu menu_4 = new JMenu("  Appearance  ");
-    JMenu menu_5 = new JMenu("  Codding  ");
+    JMenu menu_1 = new JMenu(" File ");
+    JMenu menu_2 = new JMenu(" Editing ");
+    JMenu menu_3 = new JMenu(" Settings ");
+    JMenu menu_4 = new JMenu(" Appearance ");
+    JMenu menu_5 = new JMenu(" Codding ");
 
     JMenu menu_5_sub_1 = new JMenu("   Codding Open   ");
     JMenu menu_5_sub_2 = new JMenu("   Codding Save   ");
@@ -98,6 +103,9 @@ public class MainJpanel extends JPanel
 
     Highlighter h = null;
     Highlighter.HighlightPainter h1 = null;
+
+    ActionListener CopyTxT = new CopyText(textArea_redactor_1);
+    ActionListener FindText = new FindText(textArea_redactor_1);
 
     MainJpanel() {
         /////
@@ -195,7 +203,7 @@ public class MainJpanel extends JPanel
                 KeyEvent.VK_T, ActionEvent.ALT_MASK));
         // 2
         menu_2_item_1.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_F, ActionEvent.ALT_MASK));
+                KeyEvent.VK_F, ActionEvent.CTRL_MASK));
         menu_2_item_2.setAccelerator(KeyStroke.getKeyStroke(
                 KeyEvent.VK_D, ActionEvent.ALT_MASK));
         menu_2_item_3.setAccelerator(KeyStroke.getKeyStroke(
@@ -273,10 +281,13 @@ public class MainJpanel extends JPanel
         menu_1_item_4.addActionListener(new actions());
         menu_1_item_5.addActionListener(new actions());
 
-        menu_2_item_1.addActionListener(new actions());
+        menu_2_item_1.addActionListener(FindText);
+
         menu_2_item_2.addActionListener(new actions());
         menu_2_item_3.addActionListener(new actions());
-        menu_2_item_4.addActionListener(new actions());
+
+        menu_2_item_4.addActionListener(CopyTxT);
+
 
         menu_3_item_1.addActionListener(new actions());
         menu_3_item_2.addActionListener(new actions());
@@ -528,13 +539,13 @@ public class MainJpanel extends JPanel
 
             }
             //////////////////////////////////////////////////////////////////////////////////
-            class red extends DefaultHighlighter.DefaultHighlightPainter {
+            /*class red extends DefaultHighlighter.DefaultHighlightPainter {
                 public red(Color color) {
                     super(color);
                 }
             }
             //2
-            /** Find */
+
             if (e_get == menu_2_item_1) {
                 Highlighter.HighlightPainter red = new red(Color.GRAY);
                 JTextComponent textComp;
@@ -560,7 +571,7 @@ public class MainJpanel extends JPanel
 
                 }
 
-            }
+            }*/
             ////////////////////////
             /** Replace */
             if (e_get == menu_2_item_2)
@@ -598,7 +609,8 @@ public class MainJpanel extends JPanel
 
 
             }
-            /** Copy  */
+            /**
+             * Copy
             if (e_get == menu_2_item_4)
             {
                 if(textArea_redactor_1!=null)
@@ -610,7 +622,7 @@ public class MainJpanel extends JPanel
                     Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
                     clpbrd.setContents(stringSelection, null);
                 }
-            }
+            }**/
             //3
             /** About */
             if (e_get == menu_3_item_1) {
