@@ -3,6 +3,7 @@
 package gui;
 import LogicJpanel.CopyText;
 import LogicJpanel.FindText;
+import LogicJpanel.PasteText;
 
 import javax.swing.*;
 
@@ -106,6 +107,7 @@ public class MainJpanel extends JPanel
 
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindText = new FindText(textArea_redactor_1);
+    ActionListener PasteText = new PasteText(textArea_redactor_1);
 
     MainJpanel() {
         /////
@@ -284,7 +286,7 @@ public class MainJpanel extends JPanel
         menu_2_item_1.addActionListener(FindText);
 
         menu_2_item_2.addActionListener(new actions());
-        menu_2_item_3.addActionListener(new actions());
+        menu_2_item_3.addActionListener(PasteText);
 
         menu_2_item_4.addActionListener(CopyTxT);
 
@@ -592,7 +594,7 @@ public class MainJpanel extends JPanel
                 }
             }
             ////////////////////////////////////
-            /** Paste  */
+            /** Paste
             if (e_get == menu_2_item_3) {
                 Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
 
@@ -608,7 +610,7 @@ public class MainJpanel extends JPanel
                 }//try
 
 
-            }
+            }*/
             /**
              * Copy
             if (e_get == menu_2_item_4)

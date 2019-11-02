@@ -1,4 +1,8 @@
 package LogicJpanel;
 
-public class OpenTxT {
+public class OpenTxT
+
+{
+
+
 }
