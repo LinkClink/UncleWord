@@ -11,7 +11,6 @@ public class MainJframe extends JFrame
 
     public MainJframe()
     {
-
         setSize(800, 650);
         //setMinimumSize(new Dimension(500,500));
 
@@ -24,10 +23,5 @@ public class MainJframe extends JFrame
         setVisible(true);
 
         add(panel);
-
     }
-
-
-
-
 }

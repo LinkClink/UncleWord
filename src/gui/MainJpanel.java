@@ -70,30 +70,30 @@ public class MainJpanel extends JPanel
     JMenu menu_4 = new JMenu(" Appearance ");
     JMenu menu_5 = new JMenu(" Codding ");
 
-    JMenu menu_5_sub_1 = new JMenu("   Codding Open   ");
-    JMenu menu_5_sub_2 = new JMenu("   Codding Save   ");
+    JMenu menu_5_sub_1 = new JMenu("  Codding Open  ");
+    JMenu menu_5_sub_2 = new JMenu("  Codding Save  ");
 
-    JMenuItem menu_1_item_1 = new JMenuItem("  New      ");
-    JMenuItem menu_1_item_2 = new JMenuItem("  Open      ");
-    JMenuItem menu_1_item_3 = new JMenuItem("  Save      ");
-    JMenuItem menu_1_item_4 = new JMenuItem("  Save As:      ");
-    JMenuItem menu_1_item_5 = new JMenuItem("  Exit      ");
+    JMenuItem menu_1_item_1 = new JMenuItem("New ");
+    JMenuItem menu_1_item_2 = new JMenuItem("Open ");
+    JMenuItem menu_1_item_3 = new JMenuItem("Save ");
+    JMenuItem menu_1_item_4 = new JMenuItem("Save As: ");
+    JMenuItem menu_1_item_5 = new JMenuItem("Exit ");
 
-    JMenuItem menu_2_item_1 = new JMenuItem("  Find      ");
-    JMenuItem menu_2_item_2 = new JMenuItem("  Replace      ");
-    JMenuItem menu_2_item_3 = new JMenuItem("  Paste      ");
-    JMenuItem menu_2_item_4 = new JMenuItem("  Copy      ");
+    JMenuItem menu_2_item_1 = new JMenuItem(" Find  ");
+    JMenuItem menu_2_item_2 = new JMenuItem(" Replace ");
+    JMenuItem menu_2_item_3 = new JMenuItem(" Paste  ");
+    JMenuItem menu_2_item_4 = new JMenuItem(" Copy ");
 
-    JMenuItem menu_3_item_1 = new JMenuItem("  About      ");
-    JMenuItem menu_3_item_2 = new JMenuItem("  Font size      ");
+    JMenuItem menu_3_item_1 = new JMenuItem(" About ");
+    JMenuItem menu_3_item_2 = new JMenuItem(" Font size ");
 
-    JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem("      Dark Mode      ");
+    JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem(" Dark Mode ");
 
-    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem("      ANSI      ");
-    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem("      UTF-8      ");
+    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem(" ANSI ");
+    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
-    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem("      ANSI      ");
-    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("      UTF-8      ");
+    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem(" ANSI ");
+    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
     JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
@@ -107,6 +107,7 @@ public class MainJpanel extends JPanel
     ActionListener FindText = new FindText(textArea_redactor_1);
     ActionListener PasteText = new PasteText(textArea_redactor_1);
     ActionListener ReplaceText = new ReplaceText(textArea_redactor_1);
+    ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
     ActionListener AboutProgram = new AboutProgram();
 
     MainJpanel() {
@@ -279,7 +280,7 @@ public class MainJpanel extends JPanel
         //actions
         menu_1_item_1.addActionListener(new actions());
         menu_1_item_2.addActionListener(new actions());
-        menu_1_item_3.addActionListener(new actions());
+        menu_1_item_3.addActionListener(SaveTxT);
         menu_1_item_4.addActionListener(new actions());
         menu_1_item_5.addActionListener(new actions());
 
