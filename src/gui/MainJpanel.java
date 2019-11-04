@@ -1,9 +1,7 @@
 /* Rebuild 08.06.2019 */
 
 package gui;
-import LogicJpanel.CopyText;
-import LogicJpanel.FindText;
-import LogicJpanel.PasteText;
+import LogicJpanel.*;
 
 import javax.swing.*;
 
@@ -72,30 +70,30 @@ public class MainJpanel extends JPanel
     JMenu menu_4 = new JMenu(" Appearance ");
     JMenu menu_5 = new JMenu(" Codding ");
 
-    JMenu menu_5_sub_1 = new JMenu("   Codding Open   ");
-    JMenu menu_5_sub_2 = new JMenu("   Codding Save   ");
+    JMenu menu_5_sub_1 = new JMenu("  Codding Open  ");
+    JMenu menu_5_sub_2 = new JMenu("  Codding Save  ");
 
-    JMenuItem menu_1_item_1 = new JMenuItem("  New      ");
-    JMenuItem menu_1_item_2 = new JMenuItem("  Open      ");
-    JMenuItem menu_1_item_3 = new JMenuItem("  Save      ");
-    JMenuItem menu_1_item_4 = new JMenuItem("  Save As:      ");
-    JMenuItem menu_1_item_5 = new JMenuItem("  Exit      ");
+    JMenuItem menu_1_item_1 = new JMenuItem("New ");
+    JMenuItem menu_1_item_2 = new JMenuItem("Open ");
+    JMenuItem menu_1_item_3 = new JMenuItem("Save ");
+    JMenuItem menu_1_item_4 = new JMenuItem("Save As: ");
+    JMenuItem menu_1_item_5 = new JMenuItem("Exit ");
 
-    JMenuItem menu_2_item_1 = new JMenuItem("  Find      ");
-    JMenuItem menu_2_item_2 = new JMenuItem("  Replace      ");
-    JMenuItem menu_2_item_3 = new JMenuItem("  Paste      ");
-    JMenuItem menu_2_item_4 = new JMenuItem("  Copy      ");
+    JMenuItem menu_2_item_1 = new JMenuItem(" Find  ");
+    JMenuItem menu_2_item_2 = new JMenuItem(" Replace ");
+    JMenuItem menu_2_item_3 = new JMenuItem(" Paste  ");
+    JMenuItem menu_2_item_4 = new JMenuItem(" Copy ");
 
-    JMenuItem menu_3_item_1 = new JMenuItem("  About      ");
-    JMenuItem menu_3_item_2 = new JMenuItem("  Font size      ");
+    JMenuItem menu_3_item_1 = new JMenuItem(" About ");
+    JMenuItem menu_3_item_2 = new JMenuItem(" Font size ");
 
-    JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem("      Dark Mode      ");
+    JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem(" Dark Mode ");
 
-    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem("      ANSI      ");
-    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem("      UTF-8      ");
+    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem(" ANSI ");
+    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
-    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem("      ANSI      ");
-    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("      UTF-8      ");
+    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem(" ANSI ");
+    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
     JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
@@ -108,6 +106,9 @@ public class MainJpanel extends JPanel
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindText = new FindText(textArea_redactor_1);
     ActionListener PasteText = new PasteText(textArea_redactor_1);
+    ActionListener ReplaceText = new ReplaceText(textArea_redactor_1);
+    ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
+    ActionListener AboutProgram = new AboutProgram();
 
     MainJpanel() {
         /////
@@ -279,19 +280,17 @@ public class MainJpanel extends JPanel
         //actions
         menu_1_item_1.addActionListener(new actions());
         menu_1_item_2.addActionListener(new actions());
-        menu_1_item_3.addActionListener(new actions());
+        menu_1_item_3.addActionListener(SaveTxT);
         menu_1_item_4.addActionListener(new actions());
         menu_1_item_5.addActionListener(new actions());
 
         menu_2_item_1.addActionListener(FindText);
-
-        menu_2_item_2.addActionListener(new actions());
+        menu_2_item_2.addActionListener(ReplaceText);
         menu_2_item_3.addActionListener(PasteText);
-
         menu_2_item_4.addActionListener(CopyTxT);
 
 
-        menu_3_item_1.addActionListener(new actions());
+        menu_3_item_1.addActionListener(AboutProgram);
         menu_3_item_2.addActionListener(new actions());
 
         menu_4_item_1_check.addActionListener(new actions());
@@ -540,98 +539,8 @@ public class MainJpanel extends JPanel
             {
 
             }
-            //////////////////////////////////////////////////////////////////////////////////
-            /*class red extends DefaultHighlighter.DefaultHighlightPainter {
-                public red(Color color) {
-                    super(color);
-                }
-            }
-            //2
-
-            if (e_get == menu_2_item_1) {
-                Highlighter.HighlightPainter red = new red(Color.GRAY);
-                JTextComponent textComp;
-                textComp = textArea_redactor_1;
-                String pattern = "";
-
-                pattern = JOptionPane.showInputDialog(null, "Text please");
-
-                try {
-                    Highlighter hilite = textComp.getHighlighter();
-                    Document doc = textComp.getDocument();
-                    String text = doc.getText(0, doc.getLength());
-                    int pos = 0;
-                    while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0) {
-                        hilite.addHighlight(pos, pos + pattern.length(), red);
-                        pos += pattern.length();
-                        //  textArea_redactor_1.replaceRange(pattern1,pos,pos+pattern.length());
-
-                    }
-
-
-                } catch (Exception ae) {
-
-                }
-
-            }*/
-            ////////////////////////
-            /** Replace */
-            if (e_get == menu_2_item_2)
-            {
-
-                String pattern = null;
-                String pattern1 = null;
-
-                pattern = JOptionPane.showInputDialog(null, "Text to replace: ");
-
-                if (pattern != null)
-                {
-                    pattern1 = JOptionPane.showInputDialog(null, "To: ");
-                    if (pattern1 != null)
-                    {
-                        textArea_redactor_1.setText(textArea_redactor_1.getText().replaceAll(pattern, pattern1));
-                    }
-                }
-            }
-            ////////////////////////////////////
-            /** Paste
-            if (e_get == menu_2_item_3) {
-                Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-                Transferable t = c.getContents(this);
-
-                if (t == null)
-                    return;
-                try {
-
-                    textArea_redactor_1.setText((String) t.getTransferData(DataFlavor.stringFlavor));
-                } catch (Exception ae) {
-                    ae.printStackTrace();
-                }//try
-
-
-            }*/
-            /**
-             * Copy
-            if (e_get == menu_2_item_4)
-            {
-                if(textArea_redactor_1!=null)
-                {
-                    String myString = textArea_redactor_1.getSelectedText();
-                    ByteBuffer byteBuffer = Charset.forName(code_open).encode(myString);
-
-                    StringSelection stringSelection = new StringSelection(myString);
-                    Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
-                    clpbrd.setContents(stringSelection, null);
-                }
-            }**/
             //3
-            /** About */
-            if (e_get == menu_3_item_1) {
-                JOptionPane.showMessageDialog(new JDialog(), "(Lightweight text editor ver_0.1)\n" +
-                        "Jest stworzony dla redaktowania teksu\n" +
-                        "email:shekaqwe@gmail.com \n by LinkClink", "About program", JOptionPane.INFORMATION_MESSAGE);
-            }
+
             /** Font size  */
             if (e_get == menu_3_item_2)
             {
