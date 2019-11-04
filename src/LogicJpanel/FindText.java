@@ -1,5 +1,7 @@
 package LogicJpanel;
 
+import SubGui.FindTextJframe;
+
 import javax.swing.*;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
@@ -21,6 +23,8 @@ public class FindText implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+
+        new FindTextJframe().create();
             Highlighter.HighlightPainter red = new TextPaint(Color.GRAY);
             JTextComponent textComp;
             textComp = jTextArea;
