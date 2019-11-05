@@ -37,6 +37,4 @@ public class FindTextJframe extends JPanel
         test.setResizable(false);
         test.setSize(299,104);
     }
-
-
 }
