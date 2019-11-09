@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1acdaa3d-9237-4cf8-afe1-efea54d6bdfa" name="Default Changelist" comment="" />
+    <list default="true" id="1acdaa3d-9237-4cf8-afe1-efea54d6bdfa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/LogicJpanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/ReplaceTextJpanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/test.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/ReplaceText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/ReplaceText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/FindTextJframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/FindTextJframe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MainJpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainJpanel.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,16 +26,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="XSLT Stylesheet" />
         <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Sq9Nki3qFXP6CjH87v06zjOtsj" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="EditorConfig" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LinkClink\Documents\GitHub\UncleWord\src\SubGui" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,5 +93,123 @@
       <updated>1572280220858</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/mainClass.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logicGui/ProgramWindowCenter.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJframe.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/FindText.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/FindText.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/FindText.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>280</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>286</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/mainClass.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/FindText.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>31</line>
+          <properties field="fileChooser_save" class="gui.MainJpanel" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>30</line>
+          <properties field="fileChooser_open" class="gui.MainJpanel" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>33</line>
+          <properties field="filter_1" class="gui.MainJpanel" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>99</line>
+          <properties field="CopyTxT" class="gui.MainJpanel" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
+          <line>15</line>
+          <properties field="code_open" class="LogicJpanel.CopyText" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java</url>
+          <line>12</line>
+          <properties field="jTextArea" class="SubGuiLogic.ReplaceText" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
+          <line>23</line>
+          <properties class="LogicJpanel.CopyText" method="actionPerformed">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
