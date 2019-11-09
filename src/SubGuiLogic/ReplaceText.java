@@ -1,5 +1,6 @@
 package SubGuiLogic;
 
+import LogicJpanel.ReplaceTextJpanel;
 import SubGui.ReplaceTextJframe;
 import gui.MainJpanel;
 
@@ -10,27 +11,21 @@ public class ReplaceText
     String pattern = null;
     String pattern1 = null;
 
-    private JTextArea jTextArea = new JTextArea();
+    JTextArea jTextArea = new JTextArea();
 
-    MainJpanel mainJpanel = new MainJpanel();
     ReplaceTextJframe replaceTextJframe = new ReplaceTextJframe();
 
-
-
-    public void ReplaceText()
+    public void ReplaceText(JTextField textField1,JTextField textField2)
     {
-        pattern = replaceTextJframe.getTextField1();
-        System.out.println(pattern);
-        pattern1 = replaceTextJframe.getTextField2();
-        //jTextArea = mainJpanel.getTextArea_redactor_1();
+        pattern =  textField1.getText();
+        pattern1 = textField2.getText();
+        jTextArea = replaceTextJframe.getjTextArea();
+
 
         if(pattern1 != null && pattern != null)
         {
-            jTextArea.setText(jTextArea.getText().replaceAll(pattern, pattern1));
-            //mainJpanel.setTextArea_redactor_1();
-            System.out.println("112");
+             jTextArea.setText(jTextArea.getText().replaceAll(pattern, pattern1));
         }
-        System.out.println("1:"+ pattern+"2:"+ pattern1+"3:"+jTextArea.getText());
     }
 }
 

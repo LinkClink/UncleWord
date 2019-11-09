@@ -89,7 +89,16 @@ public class MainJpanel extends JPanel
     JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem(" ANSI ");
     JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
-    JTextArea textArea_redactor_1 = new JTextArea();
+    public JTextArea getTextArea_redactor_1() {
+        return textArea_redactor_1;
+    }
+
+
+    public void setTextArea_redactor_1(String text) {
+        textArea_redactor_1.setText(text);
+    }
+
+     JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
 
     JLabel label_1 = new JLabel(date_y_m_d);
@@ -100,7 +109,7 @@ public class MainJpanel extends JPanel
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindText = new FindText(textArea_redactor_1);
     ActionListener PasteText = new PasteText(textArea_redactor_1);
-    ActionListener ReplaceTextJpanel = new ReplaceTextJpanel();
+    ActionListener ReplaceTextJpanel = new ReplaceTextJpanel(textArea_redactor_1);
     ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
     ActionListener AboutProgram = new AboutProgram();
 
@@ -732,13 +741,8 @@ public class MainJpanel extends JPanel
         }
     }
 
-    public String getTextArea_redactor_1() {
-        return textArea_redactor_1.getText();
-    }
 
-    public void setTextArea_redactor_1(String textArea_redactor_1) {
-        this.textArea_redactor_1.setText(textArea_redactor_1);
-    }
+
 
 }
 
