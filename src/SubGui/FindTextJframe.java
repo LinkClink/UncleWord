@@ -1,6 +1,7 @@
 package SubGui;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,14 +14,15 @@ public class FindTextJframe extends JPanel
     private JButton resetButton;
     private JButton findButton;
     private JPanel Jpanel;
+    
+    JFrame jFrame = new JFrame();
+    
 
     public FindTextJframe()
     {
-       setVisible(true);
 
         findButton.addActionListener(new ActionListener()
         {
-
             @Override
             public void actionPerformed(ActionEvent e)
             {
@@ -31,12 +33,11 @@ public class FindTextJframe extends JPanel
 
     public void  create()
     {
-        JFrame test = new JFrame();
-        test.setContentPane(new FindTextJframe().Jpanel);
-        test.setVisible(true);
-        test.setResizable(false);
-        test.setSize(299,104);
+        jFrame.setContentPane(new FindTextJframe().Jpanel);
+        jFrame.setVisible(true);
+        jFrame.setResizable(false);
+        jFrame.setTitle("Find:");
+        jFrame.setSize(310,114);jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
+            (Toolkit.getDefaultToolkit().getScreenSize().height - 114) / 2);
     }
-
-
 }

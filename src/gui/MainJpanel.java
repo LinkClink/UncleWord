@@ -8,14 +8,8 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.*;
 import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
 import java.awt.event.*;
 import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -95,7 +89,16 @@ public class MainJpanel extends JPanel
     JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem(" ANSI ");
     JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
 
-    JTextArea textArea_redactor_1 = new JTextArea();
+    public JTextArea getTextArea_redactor_1() {
+        return textArea_redactor_1;
+    }
+
+
+    public void setTextArea_redactor_1(String text) {
+        textArea_redactor_1.setText(text);
+    }
+
+     JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
 
     JLabel label_1 = new JLabel(date_y_m_d);
@@ -106,11 +109,11 @@ public class MainJpanel extends JPanel
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindText = new FindText(textArea_redactor_1);
     ActionListener PasteText = new PasteText(textArea_redactor_1);
-    ActionListener ReplaceText = new ReplaceText(textArea_redactor_1);
+    ActionListener ReplaceTextJpanel = new ReplaceTextJpanel(textArea_redactor_1);
     ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
     ActionListener AboutProgram = new AboutProgram();
 
-    MainJpanel() {
+    public MainJpanel() {
         /////
         menubar_1.setBackground(Color.WHITE);
 
@@ -285,7 +288,7 @@ public class MainJpanel extends JPanel
         menu_1_item_5.addActionListener(new actions());
 
         menu_2_item_1.addActionListener(FindText);
-        menu_2_item_2.addActionListener(ReplaceText);
+        menu_2_item_2.addActionListener(ReplaceTextJpanel);
         menu_2_item_3.addActionListener(PasteText);
         menu_2_item_4.addActionListener(CopyTxT);
 
@@ -737,6 +740,10 @@ public class MainJpanel extends JPanel
             }
         }
     }
+
+
+
+
 }
 
 
