@@ -16,6 +16,9 @@ public class ReplaceTextJframe extends JFrame
     private JButton allButton;
     private JButton replaceButton;
     private JPanel Jpanel;
+    private JRadioButton selectRadioButton;
+    private JRadioButton markRadioButton;
+    private JComboBox comboBox1;
 
     static Boolean windowsVisible = false;
     static JFrame jFrame = new JFrame();
@@ -29,9 +32,9 @@ public class ReplaceTextJframe extends JFrame
         jFrame.setTitle("Replace:");
         jFrame.setVisible(true);
         jFrame.setResizable(false);
-        jFrame.setSize(250,180);
-        jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 250) / 2,
-                (Toolkit.getDefaultToolkit().getScreenSize().height - 180) / 2);
+        jFrame.setSize(345,155);
+        jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 345) / 2,
+                (Toolkit.getDefaultToolkit().getScreenSize().height - 155) / 2);
 
         windowsVisible = true;
     }

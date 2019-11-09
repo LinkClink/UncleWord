@@ -37,7 +37,8 @@ public class FindTextJframe extends JPanel
         jFrame.setVisible(true);
         jFrame.setResizable(false);
         jFrame.setTitle("Find:");
-        jFrame.setSize(310,114);jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
+        jFrame.setSize(350,110);
+        jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
             (Toolkit.getDefaultToolkit().getScreenSize().height - 114) / 2);
     }
 }
