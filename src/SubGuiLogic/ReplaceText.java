@@ -1,8 +1,6 @@
 package SubGuiLogic;
 
-import LogicJpanel.ReplaceTextJpanel;
 import SubGui.ReplaceTextJframe;
-import gui.MainJpanel;
 
 import javax.swing.*;
 
