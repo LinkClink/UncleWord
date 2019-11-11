@@ -1,11 +1,13 @@
 package SubGui;
 
+import SubGuiLogic.FindText;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FindTextJframe extends JPanel
+public class FindTextJframe extends JFrame
 {
     private JRadioButton markRadioButton;
     private JRadioButton selectRadioButton;
@@ -14,9 +16,22 @@ public class FindTextJframe extends JPanel
     private JButton resetButton;
     private JButton findButton;
     private JPanel Jpanel;
-    
-    JFrame jFrame = new JFrame();
-    
+
+    static JTextArea jTextArea = new JTextArea();
+    static JFrame jFrame = new JFrame();
+
+    public void  create(JTextArea jTextArea)
+    {
+        this.jTextArea = jTextArea;
+
+        jFrame.setContentPane(new FindTextJframe().Jpanel);
+        jFrame.setVisible(true);
+        jFrame.setResizable(false);
+        jFrame.setTitle("Find:");
+        jFrame.setSize(350,110);
+        jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
+                (Toolkit.getDefaultToolkit().getScreenSize().height - 114) / 2);
+    }
 
     public FindTextJframe()
     {
@@ -26,19 +41,15 @@ public class FindTextJframe extends JPanel
             @Override
             public void actionPerformed(ActionEvent e)
             {
-
+                FindText findText = new FindText();
+                findText.findtext(textField1);
             }
         });
     }
 
-    public void  create()
+    public JTextArea getjTextArea()
     {
-        jFrame.setContentPane(new FindTextJframe().Jpanel);
-        jFrame.setVisible(true);
-        jFrame.setResizable(false);
-        jFrame.setTitle("Find:");
-        jFrame.setSize(350,110);
-        jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
-            (Toolkit.getDefaultToolkit().getScreenSize().height - 114) / 2);
+        return jTextArea;
     }
+
 }
