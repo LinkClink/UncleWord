@@ -107,7 +107,7 @@ public class MainJpanel extends JPanel
     Highlighter.HighlightPainter h1 = null;
 
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
-    ActionListener FindText = new FindText(textArea_redactor_1);
+    ActionListener FindTextJpanel = new FindTextJpanel(textArea_redactor_1);
     ActionListener PasteText = new PasteText(textArea_redactor_1);
     ActionListener ReplaceTextJpanel = new ReplaceTextJpanel(textArea_redactor_1);
     ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
@@ -287,7 +287,7 @@ public class MainJpanel extends JPanel
         menu_1_item_4.addActionListener(new actions());
         menu_1_item_5.addActionListener(new actions());
 
-        menu_2_item_1.addActionListener(FindText);
+        menu_2_item_1.addActionListener(FindTextJpanel);
         menu_2_item_2.addActionListener(ReplaceTextJpanel);
         menu_2_item_3.addActionListener(PasteText);
         menu_2_item_4.addActionListener(CopyTxT);
