@@ -1,4 +1,8 @@
 package LogicJpanel;
 
-public class FontTextJpanel {
+public class FontTextJpanel
+{
+
+
+
 }
