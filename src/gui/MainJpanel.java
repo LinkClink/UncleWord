@@ -112,6 +112,7 @@ public class MainJpanel extends JPanel
     ActionListener ReplaceTextJpanel = new ReplaceTextJpanel(textArea_redactor_1);
     ActionListener SaveTxT = new SaveTxT(textArea_redactor_1,bufer_file,code_save);
     ActionListener AboutProgram = new AboutProgram();
+    ActionListener OpenTxT = new OpenTxT(textArea_redactor_1);
 
     public MainJpanel() {
         /////
@@ -262,27 +263,9 @@ public class MainJpanel extends JPanel
         add(label_1, BorderLayout.SOUTH);
         add(scroll_textArea_redactor_1, BorderLayout.CENTER);
 
-        //Set icons
-        menu_1_item_1.setIcon(new ImageIcon("src/png/png_1.png"));
-        menu_1_item_2.setIcon(new ImageIcon("src/png/png_2.png"));
-        menu_1_item_3.setIcon(new ImageIcon("src/png/png_3.png"));
-        menu_1_item_4.setIcon(new ImageIcon("src/png/png_4.png"));
-        menu_1_item_5.setIcon(new ImageIcon("src/png/png_5.png"));
-
-        //2
-        menu_2_item_1.setIcon(new ImageIcon("src/png/png_6.png"));
-        menu_2_item_2.setIcon(new ImageIcon("src/png/png_8.png"));
-        menu_2_item_3.setIcon(new ImageIcon("src/png/png_7.png"));
-        menu_2_item_4.setIcon(new ImageIcon("src/png/png_9.png"));
-
-        //3
-        menu_3_item_1.setIcon(new ImageIcon("src/png/png_10.png"));
-        menu_3_item_2.setIcon(new ImageIcon("src/png/png_11.png"));
-
-
         //actions
         menu_1_item_1.addActionListener(new actions());
-        menu_1_item_2.addActionListener(new actions());
+        menu_1_item_2.addActionListener(OpenTxT); //++
         menu_1_item_3.addActionListener(SaveTxT);
         menu_1_item_4.addActionListener(new actions());
         menu_1_item_5.addActionListener(new actions());
@@ -369,101 +352,7 @@ public class MainJpanel extends JPanel
 
             }
             ///////////////////////////////////////////////////////////
-            /** Open  */
-            if (e_get == menu_1_item_2) {
-                if (bufer_file != null) {
-                    int n = JOptionPane.showConfirmDialog(
-                            new JPanel(),
-                            "Save changes " + bufer_file,
-                            "Lightweight text editor",
-                            JOptionPane.YES_NO_OPTION);
-                    //save
-                    if (n == 1) {
-                        String s = textArea_redactor_1.getText();
-                        try {
-                            fileWriter = new FileWriter(bufer_file);
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                        try {
-                            out = new BufferedWriter(new OutputStreamWriter(
-                                    new FileOutputStream(bufer_file), code_save));
-                        } catch (UnsupportedEncodingException e1) {
-                            e1.printStackTrace();
-                        } catch (FileNotFoundException e1) {
-                            e1.printStackTrace();
-                        }
-                        try {
-                            out.write(s);
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        } finally {
-                            try {
-                                out.close();
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            }
-                        }
-                    }
 
-                }
-
-                textArea_redactor_1.setText(null);
-
-                result = fileChooser_open.showOpenDialog(MainJpanel.this);
-
-                if (result == JFileChooser.APPROVE_OPTION) {
-
-                    fileReader = null;
-                    FileInputStream fileInputStream_1 = null;
-                    BufferedReader bufer_reader = null;
-
-                    try {
-                        fileReader = new FileReader(fileChooser_open.getSelectedFile());
-                    } catch (FileNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                    try {
-                        fileInputStream_1 = new FileInputStream(fileChooser_open.getSelectedFile());
-                        bufer_file = String.valueOf(fileChooser_open.getSelectedFile());
-                    } catch (FileNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
-                    try {
-                        System.out.print(code_open);
-                        bufer_reader = new BufferedReader(new InputStreamReader(fileInputStream_1, code_open));
-                    } catch (UnsupportedEncodingException e1) {
-                        e1.printStackTrace();
-                    }
-
-                    try {
-                        while ((textLine = bufer_reader.readLine()) != null) {
-                            textArea_redactor_1.append(textLine + "\n");
-
-                        }
-
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                    try {
-                        bufer_reader.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                    try {
-                        fileReader.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                    try {
-                        fileInputStream_1.close();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-
-            }
-            ////////////////////////////////////////////////////////////////////////////////////
             /** Save */
             if (e_get == menu_1_item_3) {
                 if (bufer_file != null) {

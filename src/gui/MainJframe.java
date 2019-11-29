@@ -4,7 +4,6 @@ import javax.swing.*;
 
 import java.awt.*;
 
-
 public class MainJframe extends JFrame
 {
     MainJpanel panel = new MainJpanel();
