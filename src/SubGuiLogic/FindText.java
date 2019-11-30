@@ -8,43 +8,38 @@ import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
 import javax.swing.text.JTextComponent;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class FindText implements ActionListener
+public class FindText
 {
-    private JTextArea jTextArea;
+    FindTextJframe findTextJframe = new FindTextJframe();
+    String pattern = "";
 
-    public FindText(JTextArea jTextArea)
+    JTextArea jTextArea;
+
+    Highlighter.HighlightPainter ColorSet = new TextPaint(Color.GRAY);
+    JTextComponent textComp;
+
+    Highlighter hilite;
+    Document doc;
+    String text;
+
+    public void findtext(JTextField jTextField)
     {
-        this.jTextArea = jTextArea;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-
-        new FindTextJframe();
-
-        Highlighter.HighlightPainter red = new TextPaint(Color.GRAY);
-        JTextComponent textComp;
+        jTextArea = findTextJframe.getjTextArea();
         textComp = jTextArea;
-        String pattern = "";
+        pattern = jTextField.getText();
 
-        pattern = JOptionPane.showInputDialog(null, "Text please");
-
-        try {
-            Highlighter hilite = textComp.getHighlighter();
-            Document doc = textComp.getDocument();
-            String text = doc.getText(0, doc.getLength());
+        try
+        {
+            hilite = textComp.getHighlighter();
+            doc = textComp.getDocument();
+            text = doc.getText(0, doc.getLength());
             int pos = 0;
-            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0) {
-                hilite.addHighlight(pos, pos + pattern.length(), red);
+            while ((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >= 0)
+            {
+                hilite.addHighlight(pos, pos + pattern.length(), ColorSet);
                 pos += pattern.length();
-                //  textArea_redactor_1.replaceRange(pattern1,pos,pos+pattern.length());
-
             }
-
 
         } catch (Exception ae)
         {
@@ -52,15 +47,10 @@ public class FindText implements ActionListener
         }
     }
 
-
-
-
-
-
-
     class TextPaint extends DefaultHighlighter.DefaultHighlightPainter
     {
-        public TextPaint(Color color) {
+        public TextPaint(Color color)
+        {
             super(color);
         }
     }

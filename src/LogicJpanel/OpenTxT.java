@@ -1,6 +1,7 @@
 package LogicJpanel;
 
 import gui.MainJpanel;
+import logic.FileSet;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -12,86 +13,103 @@ import java.io.*;
 public class OpenTxT extends Component implements ActionListener
 
 {
-    private String bufer_file;
+    int save_dialog;
+    int result;
+
+    private String buffer_file;
     private JTextArea jTextArea;
 
-    JFileChooser fileChooser_open = new JFileChooser();
-    JFileChooser fileChooser_save = new JFileChooser();
+    FileSet fileSet = new FileSet();
 
-    FileNameExtensionFilter filter_1 = new FileNameExtensionFilter("TxT", "txt");
+    String save_text;
+    String textLine;
+
+    JFileChooser fileChooser_open = new JFileChooser();
+    
+    FileInputStream fileInputStream_1 = null;
+    BufferedReader buffer_reader= null;
+
+
+    FileNameExtensionFilter filter_1 = new FileNameExtensionFilter("*.txt", "txt");
 
     FileReader fileReader = null;
     FileWriter fileWriter = null;
     Writer out = null;
 
     //Ansi    UTF-8
-    String[] codding = new String[]{"Cp1251","UTF-8"};
-    String code_open = "Cp1251";
-    String code_save = "Cp1251";
-
-    String textLine;
-
-    //
-    int result;
+    String code_open;
+    String code_save;
     
-    
-    public OpenTxT(String bufer_file)
+    public OpenTxT(JTextArea jTextArea)
     {
+        this.jTextArea = jTextArea;
 
 
+        fileChooser_open.addChoosableFileFilter(filter_1);
     }
     
     
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-            if (bufer_file != null) 
+
+        code_open = fileSet.getFile_code_open();
+        code_save = fileSet.getFile_code_save();
+
+        buffer_file = fileSet.getBuffer_file(); //must get
+
+        // Save block --1--
+            if (buffer_file != null) // ++ file open check
             {
-                int n = JOptionPane.showConfirmDialog(
-                        new JPanel(),
-                        "Save changes " + bufer_file,
-                        "Lightweight text editor",
+                save_dialog = JOptionPane.showConfirmDialog(new JPanel(),
+                        "Save changes " + buffer_file,
+                        "UncleWord",
                         JOptionPane.YES_NO_OPTION);
                 //save
-                if (n == 1) {
-                    String s = jTextArea.getText();
-                    try {
-                        fileWriter = new FileWriter(bufer_file);
-                    } catch (IOException e1) {
+                if (save_dialog == 1)
+                {
+                    save_text = jTextArea.getText();
+                    try
+                    {
+                        fileWriter = new FileWriter(buffer_file);
+                    } catch (IOException e1)
+                    {
                         e1.printStackTrace();
                     }
                     try {
                         out = new BufferedWriter(new OutputStreamWriter(
-                                new FileOutputStream(bufer_file), code_save));
-                    } catch (UnsupportedEncodingException e1) {
-                        e1.printStackTrace();
-                    } catch (FileNotFoundException e1) {
+                                new FileOutputStream(buffer_file), code_save));
+                    } catch (UnsupportedEncodingException e1)
+                    {
+                        e1.printStackTrace(); //add show dialog
+                    } catch (FileNotFoundException e1)
+                    {
                         e1.printStackTrace();
                     }
                     try {
-                        out.write(s);
-                    } catch (IOException e1) {
+                        out.write(save_text);
+                    } catch (IOException e1)
+                    {
                         e1.printStackTrace();
-                    } finally {
-                        try {
+                    } finally
+                    {
+                        try
+                        {
                             out.close();
-                        } catch (IOException e1) {
+                        } catch (IOException e1)
+                        {
                             e1.printStackTrace();
                         }
                     }
                 }
-
             }
-
-            jTextArea.setText(null);
+            // --1--
 
             result = fileChooser_open.showOpenDialog(OpenTxT.this);
 
-            if (result == JFileChooser.APPROVE_OPTION) {
-
-                fileReader = null;
-                FileInputStream fileInputStream_1 = null;
-                BufferedReader bufer_reader = null;
+            if (result == JFileChooser.APPROVE_OPTION) //positive result
+            {
+                jTextArea.setText(null);
 
                 try {
                     fileReader = new FileReader(fileChooser_open.getSelectedFile());
@@ -100,19 +118,23 @@ public class OpenTxT extends Component implements ActionListener
                 }
                 try {
                     fileInputStream_1 = new FileInputStream(fileChooser_open.getSelectedFile());
-                    bufer_file = String.valueOf(fileChooser_open.getSelectedFile());
-                } catch (FileNotFoundException e1) {
+                    buffer_file = String.valueOf(fileChooser_open.getSelectedFile());
+
+                    fileSet.setBuffer_file(buffer_file);
+                } catch (FileNotFoundException e1)
+                {
                     e1.printStackTrace();
                 }
                 try {
                     System.out.print(code_open);
-                    bufer_reader = new BufferedReader(new InputStreamReader(fileInputStream_1, code_open));
+                    buffer_reader= new BufferedReader(new InputStreamReader(fileInputStream_1, code_open));
                 } catch (UnsupportedEncodingException e1) {
                     e1.printStackTrace();
                 }
 
                 try {
-                    while ((textLine = bufer_reader.readLine()) != null) {
+                    while ((textLine = buffer_reader.readLine()) != null)
+                    {
                         jTextArea.append(textLine + "\n");
 
                     }
@@ -121,7 +143,7 @@ public class OpenTxT extends Component implements ActionListener
                     e1.printStackTrace();
                 }
                 try {
-                    bufer_reader.close();
+                    buffer_reader.close();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

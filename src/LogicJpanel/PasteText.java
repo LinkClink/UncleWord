@@ -13,6 +13,9 @@ public class PasteText implements ActionListener
 {
   private JTextArea jTextArea;
 
+    Clipboard clipboard;
+    Transferable transferable;
+
     public PasteText(JTextArea jTextArea)
     {
         this.jTextArea = jTextArea;
@@ -21,19 +24,16 @@ public class PasteText implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-            Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            transferable = clipboard.getContents(this);
 
-            Transferable t = c.getContents(this);
+            if (transferable == null) return;
+            try
+            {
+               jTextArea.insert((String) transferable.getTransferData(DataFlavor.stringFlavor),jTextArea.getCaretPosition());
+            } catch (Exception ae)
+            {
 
-            if (t == null)
-                return;
-            try {
-
-               jTextArea.setText((String) t.getTransferData(DataFlavor.stringFlavor));
-            } catch (Exception ae) {
-                ae.printStackTrace();
-            }//try
-
+            }
         }
-
 }

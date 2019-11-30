@@ -14,6 +14,11 @@ public class CopyText implements ActionListener
     private JTextArea jTextArea;
 
     String code_open = "Cp1251";
+    String myString;
+
+    ByteBuffer byteBuffer;
+    StringSelection stringSelection;
+    Clipboard clpbrd;
 
     public CopyText(JTextArea jTextArea)
     {
@@ -23,12 +28,12 @@ public class CopyText implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-            String myString = jTextArea.getSelectedText();
+            myString = jTextArea.getSelectedText();
             if(myString != null)
             {
-                ByteBuffer byteBuffer = Charset.forName(code_open).encode(myString);
-                StringSelection stringSelection = new StringSelection(myString);
-                Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+                byteBuffer = Charset.forName(code_open).encode(myString);
+                stringSelection = new StringSelection(myString);
+                clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clpbrd.setContents(stringSelection, null);
             }
         }
