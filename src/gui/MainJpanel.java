@@ -114,6 +114,7 @@ public class MainJpanel extends JPanel
     ActionListener AboutProgram = new AboutProgram();
     ActionListener OpenTxT = new OpenTxT(textArea_redactor_1);
     ActionListener NewFile = new NewFile(textArea_redactor_1);
+    ActionListener SaveAsTxT = new SaveAsTxT(textArea_redactor_1);
 
     public MainJpanel() {
         /////
@@ -268,7 +269,7 @@ public class MainJpanel extends JPanel
         menu_1_item_1.addActionListener(NewFile);
         menu_1_item_2.addActionListener(OpenTxT); //++
         menu_1_item_3.addActionListener(SaveTxT);
-        menu_1_item_4.addActionListener(new actions());
+        menu_1_item_4.addActionListener(SaveAsTxT);
         menu_1_item_5.addActionListener(new actions());
 
         menu_2_item_1.addActionListener(FindTextJpanel);
@@ -310,47 +311,6 @@ public class MainJpanel extends JPanel
 
             Object e_get = e.getSource();
 
-            ///////////////////////////////////////////////////////////
-            /** Save As */
-            if (e_get == menu_1_item_4)
-            {
-                if(textArea_redactor_1.getText()!=null) {
-                    result = fileChooser_save.showSaveDialog(MainJpanel.this);
-
-                    if (fileChooser_save.getSelectedFile() != null) {
-                        bufer_file = String.valueOf(fileChooser_save.getSelectedFile());
-                        System.out.print(bufer_file);
-                        String s = textArea_redactor_1.getText();
-                        FileWriter fileWriter = null;
-                        try {
-                            fileWriter = new FileWriter(bufer_file);
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                        try {
-                            out = new BufferedWriter(new OutputStreamWriter(
-                                    new FileOutputStream(bufer_file), code_save));
-                        } catch (UnsupportedEncodingException e1) {
-                            e1.printStackTrace();
-                        } catch (FileNotFoundException e1) {
-                            e1.printStackTrace();
-                        }
-                        try {
-                            out.write(s);
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        } finally {
-                            try {
-                                out.close();
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            }
-                        }
-
-                    }
-                }
-            }
-            //////////////////////////////////////////////////////////////////////////////////
             /** Exit */
             if (e_get == menu_1_item_5)
             {
