@@ -11,7 +11,7 @@ public class MainJframe extends JFrame
     public MainJframe()
     {
         setSize(800, 650);
-        //setMinimumSize(new Dimension(500,500));
+        setMinimumSize(new Dimension(500,500));
 
         setTitle("UncleWord");
 

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1acdaa3d-9237-4cf8-afe1-efea54d6bdfa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/ProgramStyle.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGui/ProgramStyle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGuiLogic/FontText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJframe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJframe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MainJframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainJframe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainJpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainJpanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -282,6 +284,11 @@
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
           <line>271</line>
           <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJframe.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>

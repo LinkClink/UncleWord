@@ -514,10 +514,6 @@ public class MainJpanel extends JPanel
             }
         }
     }
-
-
-
-
 }
 
 
