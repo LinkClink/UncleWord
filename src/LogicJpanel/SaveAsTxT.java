@@ -28,14 +28,12 @@ public class SaveAsTxT extends Component implements ActionListener
     public SaveAsTxT(JTextArea jTextArea)
     {
         this.jTextArea = jTextArea;
-        
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-
        code_save = fileSet.getFile_code_save();
 
             if(jTextArea.getText()!=null)
@@ -54,7 +52,8 @@ public class SaveAsTxT extends Component implements ActionListener
                     {
                         e1.printStackTrace();
                     }
-                    try {
+                    try
+                    {
                         out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
                     } catch (UnsupportedEncodingException e1)
                     {

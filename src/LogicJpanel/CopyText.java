@@ -1,5 +1,7 @@
 package LogicJpanel;
 
+import logic.FileSet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -13,8 +15,10 @@ public class CopyText implements ActionListener
 {
     private JTextArea jTextArea;
 
-    String code_open = "Cp1251";
+    String code_open;
     String myString;
+
+    FileSet fileSet = new FileSet();
 
     ByteBuffer byteBuffer;
     StringSelection stringSelection;
@@ -28,6 +32,8 @@ public class CopyText implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        code_open = fileSet.getFile_code_open();
+
             myString = jTextArea.getSelectedText();
             if(myString != null)
             {

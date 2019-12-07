@@ -16,7 +16,7 @@ import java.util.Date;
 public class MainJpanel extends JPanel
 {
     //Ansi    UTF-8
-    String[] codding = new String[]{"Cp1251","UTF-8"};
+    String[] codding = new String[]{"Cp1251","UTF-8","Auto"};
     String code_open = "Cp1251";
     String code_save = "Cp1251";
 
@@ -83,11 +83,13 @@ public class MainJpanel extends JPanel
 
     JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem(" Dark Mode ");
 
-    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem(" ANSI ");
-    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
+    JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem("ANSI");
+    JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem("UTF-8");
+    JCheckBoxMenuItem menu_5_sub_1_check_3 = new JCheckBoxMenuItem("AUTO");
 
-    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem(" ANSI ");
-    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem(" UTF-8 ");
+    JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem("ANSI");
+    JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("UTF-8");
+    JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("AUTO");
 
     public JTextArea getTextArea_redactor_1() {
         return textArea_redactor_1;
@@ -115,6 +117,7 @@ public class MainJpanel extends JPanel
     ActionListener OpenTxT = new OpenTxT(textArea_redactor_1);
     ActionListener NewFile = new NewFile(textArea_redactor_1);
     ActionListener SaveAsTxT = new SaveAsTxT(textArea_redactor_1);
+    ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3);
 
     public MainJpanel() {
         /////
@@ -294,12 +297,12 @@ public class MainJpanel extends JPanel
         fileChooser_open.setAcceptAllFileFilterUsed(false);
         fileChooser_open.addChoosableFileFilter(filter_1);
 
-        /// Coding sets
-        menu_5_sub_1_check_1.setState(true);
-        menu_5_sub_2_check_1.setState(true);
+        /// Coding sets  primary AUTO
+        menu_5_sub_1_check_3.setState(true);
+        menu_5_sub_2_check_3.setState(true);
 
-        menu_5_sub_1_check_1.setEnabled(false);
-        menu_5_sub_2_check_1.setEnabled(false);
+        menu_5_sub_1_check_3.setEnabled(false);
+        menu_5_sub_2_check_3.setEnabled(false);
 
     }
 
@@ -311,12 +314,6 @@ public class MainJpanel extends JPanel
 
             Object e_get = e.getSource();
 
-            /** Exit */
-            if (e_get == menu_1_item_5)
-            {
-
-            }
-            //3
 
             /** Font size  */
             if (e_get == menu_3_item_2)
@@ -336,141 +333,7 @@ public class MainJpanel extends JPanel
                     textArea_redactor_1.setFont(new Font("Arial", Font.PLAIN, size.hashCode()));
                 }
             }
-            //4
-            /** Dark Mode */
-            if(e_get==menu_4_item_1_check)
-            {
-                if(flag_check_box_dark_mode==0)
-                {
-                    menubar_1.setBackground(Color.BLACK);
 
-                    menu_1.setForeground(Color.WHITE);
-                    menu_1_item_1.setBackground(Color.BLACK);
-                    menu_1_item_2.setBackground(Color.BLACK);
-                    menu_1_item_3.setBackground(Color.BLACK);
-                    menu_1_item_4.setBackground(Color.BLACK);
-                    menu_1_item_5.setBackground(Color.BLACK);
-
-                    menu_1_item_1.setForeground(Color.WHITE);
-                    menu_1_item_2.setForeground(Color.WHITE);
-                    menu_1_item_3.setForeground(Color.WHITE);
-                    menu_1_item_4.setForeground(Color.WHITE);
-                    menu_1_item_5.setForeground(Color.WHITE);
-
-                    menu_2.setForeground(Color.WHITE);
-                    menu_2_item_1.setBackground(Color.BLACK);
-                    menu_2_item_2.setBackground(Color.BLACK);
-                    menu_2_item_3.setBackground(Color.BLACK);
-                    menu_2_item_4.setBackground(Color.BLACK);
-
-                    menu_2_item_1.setForeground(Color.WHITE);
-                    menu_2_item_2.setForeground(Color.WHITE);
-                    menu_2_item_3.setForeground(Color.WHITE);
-                    menu_2_item_4.setForeground(Color.WHITE);
-
-                    menu_3.setForeground(Color.WHITE);
-
-                    menu_3_item_1.setBackground(Color.BLACK);
-                    menu_3_item_2.setBackground(Color.BLACK);
-
-                    menu_3_item_1.setForeground(Color.WHITE);
-                    menu_3_item_2.setForeground(Color.WHITE);
-
-                    menu_4.setForeground(Color.WHITE);
-
-                    label_1.setForeground(Color.WHITE);
-
-                    menu_4_item_1_check.setBackground(Color.BLACK);
-                    menu_4_item_1_check.setForeground(Color.WHITE);
-
-                    menu_5.setForeground(Color.WHITE);
-
-                    menu_5_sub_1_check_1.setForeground(Color.WHITE);
-                    menu_5_sub_1_check_2.setForeground(Color.WHITE);
-
-                    menu_5_sub_2_check_1.setForeground(Color.WHITE);
-                    menu_5_sub_2_check_2.setForeground(Color.WHITE);
-
-                    menu_5_sub_1_check_1.setBackground(Color.BLACK);
-                    menu_5_sub_1_check_2.setBackground(Color.BLACK);
-
-                    menu_5_sub_2_check_1.setBackground(Color.BLACK);
-                    menu_5_sub_2_check_2.setBackground(Color.BLACK);
-
-                    textArea_redactor_1.setBackground(Color.BLACK);
-                    textArea_redactor_1.setForeground(Color.WHITE);
-
-
-                    setBackground(Color.BLACK);
-                    flag_check_box_dark_mode=1;
-
-                }else
-                {
-                    menubar_1.setBackground(Color.WHITE);
-
-                    menu_1.setForeground(Color.BLACK);
-                    menu_1_item_1.setBackground(Color.WHITE);
-                    menu_1_item_2.setBackground(Color.WHITE);
-                    menu_1_item_3.setBackground(Color.WHITE);
-                    menu_1_item_4.setBackground(Color.WHITE);
-                    menu_1_item_5.setBackground(Color.WHITE);
-
-                    menu_1_item_1.setForeground(Color.BLACK);
-                    menu_1_item_2.setForeground(Color.BLACK);
-                    menu_1_item_3.setForeground(Color.BLACK);
-                    menu_1_item_4.setForeground(Color.BLACK);
-                    menu_1_item_5.setForeground(Color.BLACK);
-
-                    menu_2.setForeground(Color.BLACK);
-                    menu_2_item_1.setBackground(Color.WHITE);
-                    menu_2_item_2.setBackground(Color.WHITE);
-                    menu_2_item_3.setBackground(Color.WHITE);
-                    menu_2_item_4.setBackground(Color.WHITE);
-
-                    menu_2_item_1.setForeground(Color.BLACK);
-                    menu_2_item_2.setForeground(Color.BLACK);
-                    menu_2_item_3.setForeground(Color.BLACK);
-                    menu_2_item_4.setForeground(Color.black);
-
-                    menu_3.setForeground(Color.BLACK);
-
-                    menu_3_item_1.setBackground(Color.WHITE);
-                    menu_3_item_2.setBackground(Color.WHITE);
-
-                    menu_3_item_1.setForeground(Color.BLACK);
-                    menu_3_item_2.setForeground(Color.BLACK);
-
-                    menu_4.setForeground(Color.BLACK);
-
-                    label_1.setForeground(Color.BLACK);
-
-                    menu_5.setForeground(Color.BLACK);
-
-                    menu_4_item_1_check.setBackground(Color.WHITE);
-                    menu_4_item_1_check.setForeground(Color.BLACK);
-
-                    menu_5_sub_1_check_1.setForeground(Color.BLACK);
-                    menu_5_sub_1_check_2.setForeground(Color.BLACK);
-
-                    menu_5_sub_2_check_1.setForeground(Color.BLACK);
-                    menu_5_sub_2_check_2.setForeground(Color.BLACK);
-
-                    menu_5_sub_1_check_1.setBackground(Color.WHITE);
-                    menu_5_sub_1_check_2.setBackground(Color.WHITE);
-
-                    menu_5_sub_2_check_1.setBackground(Color.WHITE);
-                    menu_5_sub_2_check_2.setBackground(Color.WHITE);
-
-                    textArea_redactor_1.setBackground(Color.WHITE);
-                    textArea_redactor_1.setForeground(Color.BLACK);
-
-
-                    setBackground(Color.WHITE);
-
-                    flag_check_box_dark_mode=0;
-
-                }
-            }
             //5
             /** Open ANSI  */
             if(e_get==menu_5_sub_1_check_1)

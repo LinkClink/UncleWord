@@ -1,7 +1,8 @@
 package LogicJpanel;
 
-import gui.MainJpanel;
+
 import logic.FileSet;
+import logic.ShowErrorDialog;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -20,6 +21,7 @@ public class OpenTxT extends Component implements ActionListener
     private JTextArea jTextArea;
 
     FileSet fileSet = new FileSet();
+    ShowErrorDialog showErrorDialog = new ShowErrorDialog();
 
     String save_text;
     String textLine;
@@ -47,8 +49,7 @@ public class OpenTxT extends Component implements ActionListener
 
         fileChooser_open.addChoosableFileFilter(filter_1);
     }
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent e) 
     {
@@ -74,31 +75,33 @@ public class OpenTxT extends Component implements ActionListener
                         fileWriter = new FileWriter(buffer_file);
                     } catch (IOException e1)
                     {
-                        e1.printStackTrace();
+                        showErrorDialog.show_dialog_0(e1.toString());
                     }
-                    try {
-                        out = new BufferedWriter(new OutputStreamWriter(
-                                new FileOutputStream(buffer_file), code_save));
+                    try
+                    {
+                        out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
                     } catch (UnsupportedEncodingException e1)
                     {
-                        e1.printStackTrace(); //add show dialog
+                        showErrorDialog.show_dialog_0(e1.toString()); //add show dialog
                     } catch (FileNotFoundException e1)
                     {
-                        e1.printStackTrace();
+                        showErrorDialog.show_dialog_0(e1.toString());
                     }
-                    try {
+                    try
+                    {
                         out.write(save_text);
                     } catch (IOException e1)
                     {
-                        e1.printStackTrace();
-                    } finally
+                        showErrorDialog.show_dialog_0(e1.toString());
+                    }
+                    finally
                     {
                         try
                         {
                             out.close();
                         } catch (IOException e1)
                         {
-                            e1.printStackTrace();
+                            showErrorDialog.show_dialog_0(e1.toString());
                         }
                     }
                 }
@@ -111,51 +114,62 @@ public class OpenTxT extends Component implements ActionListener
             {
                 jTextArea.setText(null);
 
-                try {
+                try
+                {
                     fileReader = new FileReader(fileChooser_open.getSelectedFile());
-                } catch (FileNotFoundException e1) {
-                    e1.printStackTrace();
+                } catch (FileNotFoundException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
-                try {
+                try
+                {
                     fileInputStream_1 = new FileInputStream(fileChooser_open.getSelectedFile());
                     buffer_file = String.valueOf(fileChooser_open.getSelectedFile());
 
                     fileSet.setBuffer_file(buffer_file);
                 } catch (FileNotFoundException e1)
                 {
-                    e1.printStackTrace();
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
-                try {
-                    System.out.print(code_open);
-                    buffer_reader= new BufferedReader(new InputStreamReader(fileInputStream_1, code_open));
-                } catch (UnsupportedEncodingException e1) {
-                    e1.printStackTrace();
+                try
+                {
+                    buffer_reader= new BufferedReader(new InputStreamReader(fileInputStream_1,code_open));
+                } catch (UnsupportedEncodingException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
 
-                try {
+                try
+                {
                     while ((textLine = buffer_reader.readLine()) != null)
                     {
                         jTextArea.append(textLine + "\n");
-
                     }
 
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                } catch (IOException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
-                try {
+                try
+                {
                     buffer_reader.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                } catch (IOException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
-                try {
+                try
+                {
                     fileReader.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                } catch (IOException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
-                try {
+                try
+                {
                     fileInputStream_1.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                } catch (IOException e1)
+                {
+                    showErrorDialog.show_dialog_0(e1.toString());
                 }
             }
     }
