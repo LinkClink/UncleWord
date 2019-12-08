@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1acdaa3d-9237-4cf8-afe1-efea54d6bdfa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/NewFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/SetCoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/ShowErrorDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/SaveTxT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/SaveTxT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/SaveTxT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/SaveTxT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/OpenTxT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/OpenTxT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ProgramStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ProgramStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/CopyText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/CopyText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/ProgramStyle.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/ProgramStyle.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainJpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainJpanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,17 +125,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>273</line>
+          <line>277</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>279</line>
+          <line>283</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>269</line>
+          <line>273</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -171,54 +174,19 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>268</line>
+          <line>272</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
@@ -232,7 +200,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>122</line>
+          <line>125</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -257,8 +225,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>267</line>
+          <line>271</line>
           <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>274</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJframe.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
@@ -280,13 +278,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>108</line>
+          <line>110</line>
           <properties field="CopyTxT" class="gui.MainJpanel" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
-          <line>15</line>
+          <line>17</line>
           <properties field="code_open" class="LogicJpanel.CopyText" />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -298,31 +296,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>98</line>
+          <line>100</line>
           <properties field="textArea_redactor_1" class="gui.MainJpanel" />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>15</line>
+          <line>16</line>
           <properties field="save_dialog" class="LogicJpanel.OpenTxT" />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>19</line>
+          <line>20</line>
           <properties field="jTextArea" class="LogicJpanel.OpenTxT" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>18</line>
+          <line>19</line>
           <properties field="buffer_file" class="LogicJpanel.OpenTxT" />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>21</line>
+          <line>22</line>
           <properties field="fileSet" class="LogicJpanel.OpenTxT" />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
@@ -334,7 +332,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
-          <line>28</line>
+          <line>32</line>
           <properties class="LogicJpanel.CopyText" method="actionPerformed">
             <option name="EMULATED" value="true" />
           </properties>
