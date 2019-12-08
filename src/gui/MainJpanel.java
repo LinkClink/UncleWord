@@ -2,43 +2,17 @@
 
 package gui;
 import LogicJpanel.*;
+import logic.ShowTimeClock;
 
 import javax.swing.*;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainJpanel extends JPanel
 {
-    //Ansi    UTF-8
-    String[] codding = new String[]{"Cp1251","UTF-8","Auto"};
-    String code_open = "Cp1251";
-    String code_save = "Cp1251";
-
-    //
-    int result;
-    int flag_check_box_dark_mode = 0;
-    //
-    String textLine = "";
-    String bufer_file = null;
-
-    //
-    JFileChooser fileChooser_open = new JFileChooser();
-    JFileChooser fileChooser_save = new JFileChooser();
-
-    FileNameExtensionFilter filter_1 = new FileNameExtensionFilter("TxT", "txt");
-
-    FileReader fileReader = null;
-    FileWriter fileWriter = null;
-
-    BufferedWriter bufferedWriter = null;
-
-    Writer out = null;
 
     String data_string_date_format = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(data_string_date_format);
@@ -52,8 +26,6 @@ public class MainJpanel extends JPanel
 
     /////
     Font font_textArea_redactor_1 = new Font("Consolas", Font.PLAIN, 16);
-
-    Font test_1 = new Font("Arial", Font.PLAIN, 7);
 
     Font font_label_1 = new Font("Arial", Font.PLAIN, 14);
 
@@ -91,22 +63,10 @@ public class MainJpanel extends JPanel
     JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("UTF-8");
     JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("AUTO");
 
-    public JTextArea getTextArea_redactor_1() {
-        return textArea_redactor_1;
-    }
-
-
-    public void setTextArea_redactor_1(String text) {
-        textArea_redactor_1.setText(text);
-    }
-
      JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
 
     JLabel label_1 = new JLabel(date_y_m_d);
-
-    Highlighter h = null;
-    Highlighter.HighlightPainter h1 = null;
 
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindTextJpanel = new FindTextJpanel(textArea_redactor_1);
@@ -117,10 +77,13 @@ public class MainJpanel extends JPanel
     ActionListener OpenTxT = new OpenTxT(textArea_redactor_1);
     ActionListener NewFile = new NewFile(textArea_redactor_1);
     ActionListener SaveAsTxT = new SaveAsTxT(textArea_redactor_1);
-    ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3);
+    ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,
+                                             menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3);
 
-    public MainJpanel() {
-        /////
+
+    public MainJpanel()
+    {
+
         menubar_1.setBackground(Color.WHITE);
 
         menu_1.setForeground(Color.BLACK);
@@ -247,9 +210,11 @@ public class MainJpanel extends JPanel
 
         menu_5_sub_1.add(menu_5_sub_1_check_1);
         menu_5_sub_1.add(menu_5_sub_1_check_2);
+        menu_5_sub_1.add(menu_5_sub_1_check_3);
 
         menu_5_sub_2.add(menu_5_sub_2_check_1);
         menu_5_sub_2.add(menu_5_sub_2_check_2);
+        menu_5_sub_2.add(menu_5_sub_2_check_3);
 
         menu_5.add(menu_5_sub_1);
         menu_5.add(menu_5_sub_2);
@@ -260,7 +225,6 @@ public class MainJpanel extends JPanel
         menubar_1.add(menu_3);
         menubar_1.add(menu_4);
         menubar_1.add(menu_5);
-
 
         menubar_1.setBackground(Color.WHITE);
 
@@ -286,16 +250,15 @@ public class MainJpanel extends JPanel
 
         menu_4_item_1_check.addActionListener(new actions());
 
-        menu_5_sub_1_check_1.addActionListener(new actions());
-        menu_5_sub_1_check_2.addActionListener(new actions());
+        menu_5_sub_1_check_1.addActionListener(SetCoding);
+        menu_5_sub_1_check_2.addActionListener(SetCoding);
 
-        menu_5_sub_2_check_1.addActionListener(new actions());
-        menu_5_sub_2_check_2.addActionListener(new actions());
+        menu_5_sub_2_check_1.addActionListener(SetCoding);
+        menu_5_sub_2_check_2.addActionListener(SetCoding);
 
-        //FileCoser Setting
-        fileChooser_open.setDialogTitle("Open File");
-        fileChooser_open.setAcceptAllFileFilterUsed(false);
-        fileChooser_open.addChoosableFileFilter(filter_1);
+        menu_5_sub_1_check_3.addActionListener(SetCoding);
+        menu_5_sub_2_check_3.addActionListener(SetCoding);
+
 
         /// Coding sets  primary AUTO
         menu_5_sub_1_check_3.setState(true);
@@ -303,7 +266,6 @@ public class MainJpanel extends JPanel
 
         menu_5_sub_1_check_3.setEnabled(false);
         menu_5_sub_2_check_3.setEnabled(false);
-
     }
 
     class actions implements ActionListener
@@ -311,9 +273,7 @@ public class MainJpanel extends JPanel
         @Override
         public void actionPerformed(ActionEvent e)
         {
-
             Object e_get = e.getSource();
-
 
             /** Font size  */
             if (e_get == menu_3_item_2)
@@ -332,48 +292,6 @@ public class MainJpanel extends JPanel
                 {
                     textArea_redactor_1.setFont(new Font("Arial", Font.PLAIN, size.hashCode()));
                 }
-            }
-
-            //5
-            /** Open ANSI  */
-            if(e_get==menu_5_sub_1_check_1)
-            {
-                code_open=codding[0];
-
-                menu_5_sub_1_check_1.setEnabled(false);
-                menu_5_sub_1_check_2.setEnabled(true);
-                menu_5_sub_1_check_2.setState(false);
-
-            }
-            /** Open UTF-8  */
-            if(e_get==menu_5_sub_1_check_2)
-            {
-                code_open=codding[1];
-
-                menu_5_sub_1_check_2.setEnabled(false);
-                menu_5_sub_1_check_1.setEnabled(true);
-                menu_5_sub_1_check_1.setState(false);
-
-            }
-            /** Save ANSI  */
-            if(e_get==menu_5_sub_2_check_1)
-            {
-                code_save=codding[0];
-
-                menu_5_sub_2_check_1.setEnabled(false);
-                menu_5_sub_2_check_2.setEnabled(true);
-                menu_5_sub_2_check_2.setState(false);
-
-            }
-            /** Save UTF-8  */
-            if(e_get==menu_5_sub_2_check_2)
-            {
-                code_save=codding[1];
-
-                menu_5_sub_2_check_2.setEnabled(false);
-                menu_5_sub_2_check_1.setEnabled(true);
-                menu_5_sub_2_check_1.setState(false);
-
             }
         }
     }
