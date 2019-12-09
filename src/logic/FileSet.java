@@ -38,7 +38,7 @@ public class FileSet
 
     static String buffer_file = null;
 
-    static String file_code_open = "Cp1251"; // ANSI
+    static String file_code_open = "AUTO"; // ANSI
     static String file_code_save = "Cp1251"; // ANSI
 
 }

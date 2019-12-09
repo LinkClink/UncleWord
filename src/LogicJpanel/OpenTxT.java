@@ -2,6 +2,7 @@ package LogicJpanel;
 
 
 import logic.FileSet;
+import logic.GetEncode;
 import logic.ShowErrorDialog;
 
 import javax.swing.*;
@@ -22,6 +23,7 @@ public class OpenTxT extends Component implements ActionListener
 
     FileSet fileSet = new FileSet();
     ShowErrorDialog showErrorDialog = new ShowErrorDialog();
+    GetEncode charsetDetector = new GetEncode();
 
     String save_text;
     String textLine;
@@ -58,6 +60,8 @@ public class OpenTxT extends Component implements ActionListener
         code_save = fileSet.getFile_code_save();
 
         buffer_file = fileSet.getBuffer_file(); //must get
+
+
 
         // Save block --1--
             if (buffer_file != null) // ++ file open check
@@ -133,6 +137,14 @@ public class OpenTxT extends Component implements ActionListener
                 }
                 try
                 {
+                    if(code_open.equals("AUTO"))
+                    {
+                        code_open = charsetDetector.run(buffer_file);
+                        System.out.println(code_open+ " code:");
+                    }
+
+
+
                     buffer_reader= new BufferedReader(new InputStreamReader(fileInputStream_1,code_open));
                 } catch (UnsupportedEncodingException e1)
                 {
