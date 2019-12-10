@@ -10,7 +10,7 @@ public class SetCoding implements ActionListener
 {
     private Object e_get;
 
-    private String[] codding = new String[]{"Cp1251","UTF-8","Auto"};
+    private String[] codding = new String[]{"Cp1251","UTF-8","Auto","UTF-16"};
 
     private JCheckBoxMenuItem open_ansi;
     private JCheckBoxMenuItem save_ansi;
@@ -93,10 +93,10 @@ public class SetCoding implements ActionListener
             save_auto.setState(false);
             save_ansi.setState(false);
         }
-        /** Save AUTO */
+        /** Save UTF-16 */
         if(e_get==save_auto)
         {
-            fileSet.setFile_code_save(codding[2]);
+            fileSet.setFile_code_save(codding[3]);
             save_auto.setEnabled(false);
             save_utf.setEnabled(true);
             save_ansi.setEnabled(true);

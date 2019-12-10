@@ -61,7 +61,7 @@ public class MainJpanel extends JPanel
 
     JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem("ANSI");
     JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("UTF-8");
-    JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("AUTO");
+    JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("UTF-16");
 
      JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
@@ -83,7 +83,6 @@ public class MainJpanel extends JPanel
 
     public MainJpanel()
     {
-
         menubar_1.setBackground(Color.WHITE);
 
         menu_1.setForeground(Color.BLACK);
@@ -262,10 +261,10 @@ public class MainJpanel extends JPanel
 
         /// Coding sets  primary AUTO
         menu_5_sub_1_check_3.setState(true);
-        menu_5_sub_2_check_3.setState(true);
+        menu_5_sub_2_check_1.setState(true);
 
         menu_5_sub_1_check_3.setEnabled(false);
-        menu_5_sub_2_check_3.setEnabled(false);
+        menu_5_sub_2_check_1.setEnabled(false);
     }
 
     class actions implements ActionListener
