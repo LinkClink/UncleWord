@@ -1,6 +1,7 @@
 package LogicJpanel;
 
 import logic.FileSet;
+import logic.ShowErrorDialog;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,11 +19,11 @@ public class SaveTxT implements ActionListener
     Writer writer = null;
     
     FileSet fileSet = new FileSet();
+    ShowErrorDialog showErrorDialog = new ShowErrorDialog();
 
     public SaveTxT(JTextArea jTextArea)
     {
         this.jTextArea = jTextArea;
-
     }
 
     @Override
@@ -34,36 +35,30 @@ public class SaveTxT implements ActionListener
             if (buffer_file != null) 
             {
                 save_text = jTextArea.getText();
-                try {
+                try
+                {
                     fileWriter = new FileWriter(buffer_file);
                 } catch (IOException e1)
+                { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                try
                 {
-                    e1.printStackTrace();
-                }
-                try {
-                    writer = new BufferedWriter(new OutputStreamWriter(
-                            new FileOutputStream(buffer_file), code_save));
+                    writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
                 } catch (UnsupportedEncodingException e1)
-                {
-                    e1.printStackTrace();
+                { showErrorDialog.show_dialog_0(e1.getMessage());
                 } catch (FileNotFoundException e1)
+                { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                try
                 {
-                    e1.printStackTrace();
-                }
-                try {
                     writer.write(save_text);
                 } catch (IOException e1)
-                {
-                    e1.printStackTrace();
-                } finally
+                { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                finally
                 {
                     try
                     {
                         writer.close();
                     } catch (IOException e1)
-                    {
-                        e1.printStackTrace();
-                    }
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); }
                 }
             }
     }

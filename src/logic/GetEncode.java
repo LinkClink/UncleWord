@@ -18,7 +18,7 @@ public class GetEncode
     private BufferedInputStream input;
     private CharsetDecoder decoder;
 
-    private String[] charsetsToBeTested = {"UTF-8","Cp1253","UTF-16","windows-1253", "ISO-8859-7","Cp1251","US-ASCII"};
+    private String[] ch_toTest = {"UTF-8","Cp1253","UTF-16","windows-1253", "ISO-8859-7","Cp1251","US-ASCII"};
     private String ch_validate;
     private String ch_decode;
 
@@ -47,10 +47,11 @@ public class GetEncode
         try
         {
             input = new BufferedInputStream(new FileInputStream(f));
+
             decoder = charset.newDecoder();
             decoder.reset();
-
             identified = false;
+
             while ((input.read(buffer) != -1) && (!identified))
             {
                 identified = identify(buffer, decoder);
@@ -75,10 +76,10 @@ public class GetEncode
         return true;
     }
 
-    public String run(String filename)
+    public String GetFileDecode(String filename)
     {
         file = new File(filename);
-        charset = detectCharset(file, charsetsToBeTested);
+        charset = detectCharset(file, ch_toTest);
 
         if (charset != null)
         {
@@ -87,10 +88,7 @@ public class GetEncode
                 reader = new InputStreamReader(new FileInputStream(file), charset);
                 c=0;
                 while ((c = reader.read()) != -1)
-                {
-                    ch_decode = reader.getEncoding();
-                    //System.out.println("Open "+reader.getEncoding()+"\n"); //test
-                }
+                { ch_decode = reader.getEncoding(); }
                 reader.close();
             } catch (FileNotFoundException fileEx)
             { showErrorDialog.show_dialog_0(fileEx.getMessage()); }
@@ -109,17 +107,11 @@ public class GetEncode
         switch (filedecode)
         {
             case "UTF8":
-            { ch_validate = "UTF-8";
-            break;
-            }
+            { ch_validate = "UTF-8"; break; }
             case "Cp1253":
-            { ch_validate = "Cp1251";
-            break;
-            }
+            { ch_validate = "Cp1251"; break; }
             case "UTF-16":
-            { ch_validate = "UTF-16";
-            break;
-            }
+            { ch_validate = "UTF-16"; break; }
         }
         return ch_validate;
     }

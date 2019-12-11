@@ -1,13 +1,14 @@
 package LogicJpanel;
 
-import gui.MainJpanel;
 import logic.FileSet;
+import logic.ShowErrorDialog;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+
 
 public class SaveAsTxT extends Component implements ActionListener
 {
@@ -17,18 +18,20 @@ public class SaveAsTxT extends Component implements ActionListener
     private String buffer_file;
     private String save_text;
 
-    
     FileSet fileSet = new FileSet();
+    ShowErrorDialog showErrorDialog = new ShowErrorDialog();
 
-    Writer out;
-    JFileChooser fileChooser = new JFileChooser();
-    FileWriter fileWriter = null;
+    private Writer out;
+    private JFileChooser fileChooser = new JFileChooser();
+    private FileWriter fileWriter = null;
 
+    boolean filename_ck = true;
+    private int validate_flag;
+    String validate;
 
     public SaveAsTxT(JTextArea jTextArea)
     {
         this.jTextArea = jTextArea;
-
     }
 
     @Override
@@ -42,41 +45,55 @@ public class SaveAsTxT extends Component implements ActionListener
 
                 if (fileChooser.getSelectedFile() != null) 
                 {
-                    buffer_file = String.valueOf(fileChooser.getSelectedFile());
+
+                   validate = String.valueOf(fileChooser.getSelectedFile().getName());
+
+
+                    if(filename_ck == true) // ck file type
+                        buffer_file = String.valueOf(fileChooser.getSelectedFile()) + fileType_ck(validate);
+
                     save_text = jTextArea.getText();
 
                     try
                     {
                         fileWriter = new FileWriter(buffer_file);
                     } catch (IOException e1)
-                    {
-                        e1.printStackTrace();
-                    }
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); }
                     try
                     {
                         out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
+
                     } catch (UnsupportedEncodingException e1)
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); } catch (FileNotFoundException e1)
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                    try
                     {
-                        e1.printStackTrace();
-                    } catch (FileNotFoundException e1)
-                    {
-                        e1.printStackTrace();
-                    }
-                    try {
                         out.write(save_text);
                     } catch (IOException e1)
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                    finally
                     {
-                        e1.printStackTrace();
-                    } finally {
-                        try {
+                        try
+                        {
                             out.close();
                         } catch (IOException e1)
-                        {
-                            e1.printStackTrace();
-                        }
+                        { showErrorDialog.show_dialog_0(e1.getMessage()); }
                     }
 
                 }
             }
+    }
+
+    public String fileType_ck(String name)
+    {
+        validate_flag=name.lastIndexOf(".txt");
+        switch (validate_flag)
+        {
+            case -1:
+            { return ".txt"; }
+
+            default:
+            { return ""; }
+        }
     }
 }

@@ -118,9 +118,10 @@ public class OpenTxT extends Component implements ActionListener
                 try
                 {
                     if(code_open.equals("AUTO"))
-                    { code_open = charsetDetector.run(buffer_file); }
+                    { code_open = charsetDetector.GetFileDecode(buffer_file); }
 
                     buffer_reader= new BufferedReader(new InputStreamReader(fileInputStream_1,code_open));
+
                 } catch (UnsupportedEncodingException e1)
                 { showErrorDialog.show_dialog_0(e1.getMessage()); }
                 try
