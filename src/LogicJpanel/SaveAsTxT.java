@@ -27,7 +27,8 @@ public class SaveAsTxT extends Component implements ActionListener
 
     boolean filename_ck = true;
     private int validate_flag;
-    String validate;
+    private int validate_index;
+    private String validate;
 
     public SaveAsTxT(JTextArea jTextArea)
     {
@@ -48,7 +49,6 @@ public class SaveAsTxT extends Component implements ActionListener
 
                    validate = String.valueOf(fileChooser.getSelectedFile().getName());
 
-
                     if(filename_ck == true) // ck file type
                         buffer_file = String.valueOf(fileChooser.getSelectedFile()) + fileType_ck(validate);
 
@@ -64,7 +64,8 @@ public class SaveAsTxT extends Component implements ActionListener
                         out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
 
                     } catch (UnsupportedEncodingException e1)
-                    { showErrorDialog.show_dialog_0(e1.getMessage()); } catch (FileNotFoundException e1)
+                    { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                    catch (FileNotFoundException e1)
                     { showErrorDialog.show_dialog_0(e1.getMessage()); }
                     try
                     {
@@ -87,6 +88,10 @@ public class SaveAsTxT extends Component implements ActionListener
     public String fileType_ck(String name)
     {
         validate_flag=name.lastIndexOf(".txt");
+        validate_index=name.length();
+
+        if(validate_index-5 == validate_flag) validate_flag = -1; else validate_flag = 0;
+
         switch (validate_flag)
         {
             case -1:
