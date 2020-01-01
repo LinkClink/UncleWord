@@ -1,5 +1,7 @@
 package LogicJpanel;
 
+import logic.ShowErrorDialog;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -11,10 +13,12 @@ import java.awt.event.ActionListener;
 public class PasteText implements ActionListener
 
 {
-  private JTextArea jTextArea;
+    private JTextArea jTextArea;
 
-    Clipboard clipboard;
-    Transferable transferable;
+    private Clipboard clipboard;
+    private Transferable transferable;
+
+    ShowErrorDialog showErrorDialog = new ShowErrorDialog();
 
     public PasteText(JTextArea jTextArea)
     {
@@ -32,8 +36,6 @@ public class PasteText implements ActionListener
             {
                jTextArea.insert((String) transferable.getTransferData(DataFlavor.stringFlavor),jTextArea.getCaretPosition());
             } catch (Exception ae)
-            {
-
-            }
+            { showErrorDialog.show_dialog_0(ae.getMessage()); }
         }
 }

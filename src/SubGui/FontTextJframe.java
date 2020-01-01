@@ -10,6 +10,4 @@ public class FontTextJframe
     private JList list3;
     private JButton applyButton;
     private JButton resetButton;
-
-
 }

@@ -61,7 +61,7 @@ public class OpenTxT extends Component implements ActionListener
             if (buffer_file != null) // ++ file open check
             {
                 save_dialog = JOptionPane.showConfirmDialog(new JPanel(),
-                        "Save changes " + buffer_file,
+                        "Save changes: " + buffer_file,
                         "UncleWord",
                         JOptionPane.YES_NO_OPTION);
                 //save
