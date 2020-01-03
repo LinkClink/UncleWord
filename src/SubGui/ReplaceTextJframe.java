@@ -1,6 +1,7 @@
 package SubGui;
 
 import SubGuiLogic.ReplaceText;
+import logic.MarkTextFunctions;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +25,8 @@ public class ReplaceTextJframe extends JFrame
     static JFrame jFrame = new JFrame();
     static JTextArea jTextArea;
 
+    private int select = 2;
+
     public void  create(JTextArea jTextArea)
     {
         this.jTextArea = jTextArea;
@@ -46,7 +49,7 @@ public class ReplaceTextJframe extends JFrame
             public void actionPerformed(ActionEvent e)
             {
                 ReplaceText replaceText = new ReplaceText();
-                replaceText.ReplaceText(textField1,textField2);
+                replaceText.ReplaceAll(textField1,textField2, (String) comboBox1.getSelectedItem(),select,jTextArea);
             }
         });
         jFrame.addWindowListener(new WindowAdapter()
@@ -54,8 +57,38 @@ public class ReplaceTextJframe extends JFrame
             @Override
             public void windowClosing(WindowEvent e)
             {
+                MarkTextFunctions markTextFunctions = new MarkTextFunctions();
+                markTextFunctions.Reset(jTextArea);
+
                 onClose();
                 super.windowClosing(e);
+            }
+        });
+        replaceButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                ReplaceText replaceText = new ReplaceText();
+                replaceText.Replace(textField1,textField2,jTextArea,select, (String) comboBox1.getSelectedItem());
+            }
+        });
+        selectRadioButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                markRadioButton.setSelected(false);
+                select = 1;
+            }
+        });
+        markRadioButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                selectRadioButton.setSelected(false);
+                select = 0;
             }
         });
     }

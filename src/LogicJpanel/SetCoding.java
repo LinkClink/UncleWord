@@ -21,10 +21,12 @@ public class SetCoding implements ActionListener
     private JCheckBoxMenuItem open_auto;
     private JCheckBoxMenuItem save_auto;
 
+    private JCheckBoxMenuItem open_utf16;
+
     FileSet fileSet = new FileSet();
 
     public SetCoding(JCheckBoxMenuItem open_ansi, JCheckBoxMenuItem save_ansi, JCheckBoxMenuItem open_utf,
-                     JCheckBoxMenuItem save_utf, JCheckBoxMenuItem open_auto, JCheckBoxMenuItem save_auto)
+                     JCheckBoxMenuItem save_utf, JCheckBoxMenuItem open_auto, JCheckBoxMenuItem save_auto, JCheckBoxMenuItem open_utf16)
     {
         this.open_ansi = open_ansi;
         this.save_ansi = save_ansi;
@@ -35,13 +37,13 @@ public class SetCoding implements ActionListener
         this.open_auto = open_auto;
         this.save_auto = save_auto;
 
+        this.open_utf16 = open_utf16;
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
         e_get = e.getSource();
-
 
         /** Open ANSI  */
         if(e_get==open_ansi)
@@ -50,8 +52,10 @@ public class SetCoding implements ActionListener
             open_ansi.setEnabled(false);
             open_utf.setEnabled(true);
             open_auto.setEnabled(true);
+            open_utf16.setEnabled(true);
             open_utf.setState(false);
             open_auto.setState(false);
+            open_utf16.setState(false);
         }
         /** Open UTF-8  */
         if(e_get==open_utf)
@@ -60,8 +64,10 @@ public class SetCoding implements ActionListener
             open_utf.setEnabled(false);
             open_ansi.setEnabled(true);
             open_auto.setEnabled(true);
+            open_utf16.setEnabled(true);
             open_auto.setState(false);
             open_ansi.setState(false);
+            open_utf16.setState(false);
         }
         /** Open AUTO */
         if(e_get == open_auto)
@@ -70,8 +76,22 @@ public class SetCoding implements ActionListener
             open_auto.setEnabled(false);
             open_ansi.setEnabled(true);
             open_utf.setEnabled(true);
+            open_utf16.setEnabled(true);
             open_ansi.setState(false);
             open_utf.setState(false);
+            open_utf16.setState(false);
+        }
+        /** Open UTF 16 */
+        if(e_get == open_utf16)
+        {
+            fileSet.setFile_code_open(codding[3]);
+            open_utf16.setEnabled(false);
+            open_auto.setEnabled(true);
+            open_ansi.setEnabled(true);
+            open_utf.setEnabled(true);
+            open_ansi.setState(false);
+            open_utf.setState(false);
+            open_auto.setState(false);
         }
         /** Save ANSI  */
         if(e_get==save_ansi)

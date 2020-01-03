@@ -34,6 +34,14 @@ public class FileSet
         this.file_code_save = file_code_save;
     }
 
+    public int getMark_text_position() {
+        return mark_text_position;
+    }
+
+    public void setMark_text_position(int mark_text_position) {
+        FileSet.mark_text_position = mark_text_position;
+    }
+
     static String file_code;
 
     static String buffer_file = null;
@@ -41,4 +49,5 @@ public class FileSet
     static String file_code_open = "AUTO"; // ANSI
     static String file_code_save = "Cp1251"; // ANSI
 
+    static int mark_text_position = 0; // 0
 }

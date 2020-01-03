@@ -34,7 +34,7 @@ public class FindTextJframe extends JFrame
         jFrame.setTitle("Find:");
         jFrame.setSize(350,110);
         jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 310) / 2,
-                (Toolkit.getDefaultToolkit().getScreenSize().height - 114) / 2);
+                (Toolkit.getDefaultToolkit().getScreenSize().height - 110) / 2);
     }
 
     public FindTextJframe()
@@ -45,7 +45,7 @@ public class FindTextJframe extends JFrame
             public void actionPerformed(ActionEvent e)
             {
                 FindText findText = new FindText();
-                findText.findtext(textField1, (String) comboBox1.getSelectedItem(), select);
+                findText.MarkSelectText(textField1, (String) comboBox1.getSelectedItem(), select,jTextArea);
             }
         });
 
@@ -55,7 +55,7 @@ public class FindTextJframe extends JFrame
             public void actionPerformed(ActionEvent e)
             {
                 FindText findText = new FindText();
-                findText.Reset();
+                findText.Reset(jTextArea);
             }
         });
 
@@ -84,17 +84,11 @@ public class FindTextJframe extends JFrame
                 select = 0;
             }
         });
-
-
     }
 
     public JTextArea getjTextArea()
     {
         return jTextArea;
     }
-    public String getColor()
-    {
-        System.out.println(comboBox1.getSelectedIndex());
-        return (String) comboBox1.getSelectedItem();
-    }
+
 }
