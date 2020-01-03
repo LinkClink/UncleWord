@@ -2,43 +2,20 @@
 
 package gui;
 import LogicJpanel.*;
+import SubGui.ProgramStyle;
+import logic.FontSet;
+import logic.ShowTimeClock;
 
 import javax.swing.*;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainJpanel extends JPanel
 {
-    //Ansi    UTF-8
-    String[] codding = new String[]{"Cp1251","UTF-8","Auto"};
-    String code_open = "Cp1251";
-    String code_save = "Cp1251";
-
-    //
-    int result;
-    int flag_check_box_dark_mode = 0;
-    //
-    String textLine = "";
-    String bufer_file = null;
-
-    //
-    JFileChooser fileChooser_open = new JFileChooser();
-    JFileChooser fileChooser_save = new JFileChooser();
-
-    FileNameExtensionFilter filter_1 = new FileNameExtensionFilter("TxT", "txt");
-
-    FileReader fileReader = null;
-    FileWriter fileWriter = null;
-
-    BufferedWriter bufferedWriter = null;
-
-    Writer out = null;
+    FontSet fontSet = new FontSet();
 
     String data_string_date_format = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(data_string_date_format);
@@ -48,12 +25,9 @@ public class MainJpanel extends JPanel
     Font font_menu_1 = new Font("Arial", Font.PLAIN, 11);
 
     Font font_menuitem_1 = new Font("Arial", Font.PLAIN, 10);
-    Font font_menuitem_2 = new Font("Arial", Font.BOLD, 10);
 
     /////
-    Font font_textArea_redactor_1 = new Font("Consolas", Font.PLAIN, 16);
-
-    Font test_1 = new Font("Arial", Font.PLAIN, 7);
+    Font font_textArea_redactor_1 = new Font(fontSet.getPrimary_font(), fontSet.getPrimary_font_style(), fontSet.getPrimary_font_size());
 
     Font font_label_1 = new Font("Arial", Font.PLAIN, 14);
 
@@ -61,15 +35,14 @@ public class MainJpanel extends JPanel
     JMenu menu_1 = new JMenu(" File ");
     JMenu menu_2 = new JMenu(" Editing ");
     JMenu menu_3 = new JMenu(" Settings ");
-    JMenu menu_4 = new JMenu(" Appearance ");
     JMenu menu_5 = new JMenu(" Codding ");
 
     JMenu menu_5_sub_1 = new JMenu("  Codding Open  ");
     JMenu menu_5_sub_2 = new JMenu("  Codding Save  ");
 
-    JMenuItem menu_1_item_1 = new JMenuItem("New ");
-    JMenuItem menu_1_item_2 = new JMenuItem("Open ");
-    JMenuItem menu_1_item_3 = new JMenuItem("Save ");
+    JMenuItem menu_1_item_1 = new JMenuItem("New: ");
+    JMenuItem menu_1_item_2 = new JMenuItem("Open: ");
+    JMenuItem menu_1_item_3 = new JMenuItem("Save: ");
     JMenuItem menu_1_item_4 = new JMenuItem("Save As: ");
     JMenuItem menu_1_item_5 = new JMenuItem("Exit ");
 
@@ -79,34 +52,22 @@ public class MainJpanel extends JPanel
     JMenuItem menu_2_item_4 = new JMenuItem(" Copy ");
 
     JMenuItem menu_3_item_1 = new JMenuItem(" About ");
-    JMenuItem menu_3_item_2 = new JMenuItem(" Font size ");
-
-    JCheckBoxMenuItem menu_4_item_1_check = new JCheckBoxMenuItem(" Dark Mode ");
+    JMenuItem menu_3_item_2 = new JMenuItem(" Font text ");
+    JMenuItem menu_3_item_3 = new JMenuItem(" Program style ");
 
     JCheckBoxMenuItem menu_5_sub_1_check_1 = new JCheckBoxMenuItem("ANSI");
     JCheckBoxMenuItem menu_5_sub_1_check_2 = new JCheckBoxMenuItem("UTF-8");
     JCheckBoxMenuItem menu_5_sub_1_check_3 = new JCheckBoxMenuItem("AUTO");
+    JCheckBoxMenuItem menu_5_sub_1_check_4 = new JCheckBoxMenuItem("UTF-16");
 
     JCheckBoxMenuItem menu_5_sub_2_check_1 = new JCheckBoxMenuItem("ANSI");
     JCheckBoxMenuItem menu_5_sub_2_check_2 = new JCheckBoxMenuItem("UTF-8");
-    JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("AUTO");
+    JCheckBoxMenuItem menu_5_sub_2_check_3 = new JCheckBoxMenuItem("UTF-16");
 
-    public JTextArea getTextArea_redactor_1() {
-        return textArea_redactor_1;
-    }
-
-
-    public void setTextArea_redactor_1(String text) {
-        textArea_redactor_1.setText(text);
-    }
-
-     JTextArea textArea_redactor_1 = new JTextArea();
+    JTextArea textArea_redactor_1 = new JTextArea();
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
 
     JLabel label_1 = new JLabel(date_y_m_d);
-
-    Highlighter h = null;
-    Highlighter.HighlightPainter h1 = null;
 
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindTextJpanel = new FindTextJpanel(textArea_redactor_1);
@@ -117,71 +78,31 @@ public class MainJpanel extends JPanel
     ActionListener OpenTxT = new OpenTxT(textArea_redactor_1);
     ActionListener NewFile = new NewFile(textArea_redactor_1);
     ActionListener SaveAsTxT = new SaveAsTxT(textArea_redactor_1);
-    ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3);
+    ActionListener CloseProgram = new CloseProgram(textArea_redactor_1);
+    ActionListener FontTextJpanel = new FontTextJpanel(textArea_redactor_1);
+    ActionListener ProgramStyleJpanel = new ProgramStyleJpanel(textArea_redactor_1,menu_1,menu_2,menu_3,menu_5);
+    ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,
+                                             menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3,menu_5_sub_1_check_4);
 
-    public MainJpanel() {
-        /////
-        menubar_1.setBackground(Color.WHITE);
 
-        menu_1.setForeground(Color.BLACK);
+    public MainJpanel()
+    {
+        //Set Colors
 
-        menu_1_item_1.setBackground(Color.WHITE);
-        menu_1_item_2.setBackground(Color.WHITE);
-        menu_1_item_3.setBackground(Color.WHITE);
-        menu_1_item_4.setBackground(Color.WHITE);
-        menu_1_item_5.setBackground(Color.WHITE);
-
-        menu_1_item_1.setForeground(Color.BLACK);
-        menu_1_item_2.setForeground(Color.BLACK);
-        menu_1_item_3.setForeground(Color.BLACK);
-        menu_1_item_4.setForeground(Color.BLACK);
-        menu_1_item_5.setForeground(Color.BLACK);
-
-        menu_2.setForeground(Color.BLACK);
-        menu_2_item_1.setBackground(Color.WHITE);
-        menu_2_item_2.setBackground(Color.WHITE);
-        menu_2_item_3.setBackground(Color.WHITE);
-        menu_2_item_4.setBackground(Color.WHITE);
-
-        menu_2_item_1.setForeground(Color.BLACK);
-        menu_2_item_2.setForeground(Color.BLACK);
-        menu_2_item_3.setForeground(Color.BLACK);
-        menu_2_item_4.setForeground(Color.black);
-
-        menu_3.setForeground(Color.BLACK);
-
-        menu_3_item_1.setBackground(Color.WHITE);
-        menu_3_item_2.setBackground(Color.WHITE);
-
-        menu_3_item_1.setForeground(Color.BLACK);
-        menu_3_item_2.setForeground(Color.BLACK);
-
-        menu_4.setForeground(Color.BLACK);
-
-        label_1.setForeground(Color.BLACK);
-
-        menu_4_item_1_check.setBackground(Color.WHITE);
-        menu_4_item_1_check.setForeground(Color.BLACK);
 
         textArea_redactor_1.setBackground(Color.WHITE);
         textArea_redactor_1.setForeground(Color.BLACK);
-
-        setBackground(Color.WHITE);
-        ///////
 
         setLayout(new BorderLayout());
 
         menu_1_item_1.setForeground(Color.GRAY);
         menu_1_item_5.setForeground(Color.GRAY);
-        menu_4_item_1_check.setForeground(Color.BLACK);
-
         ////// Fonts All
         textArea_redactor_1.setFont(font_textArea_redactor_1);
 
         menu_1.setFont(font_menu_1);
         menu_2.setFont(font_menu_1);
         menu_3.setFont(font_menu_1);
-        menu_4.setFont(font_menu_1);
         menu_5.setFont(font_menu_1);
 
         menu_5_sub_1.setFont(font_menuitem_1);
@@ -200,35 +121,23 @@ public class MainJpanel extends JPanel
 
         menu_3_item_1.setFont(font_menuitem_1);
         menu_3_item_2.setFont(font_menuitem_1);
-
-        menu_4_item_1_check.setFont(font_menuitem_2);
-
+        menu_3_item_3.setFont(font_menuitem_1);
 
         label_1.setFont(font_label_1);
-
         /// Controls Alt
-        menu_1_item_1.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_G, ActionEvent.ALT_MASK));
-        menu_1_item_2.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_S, ActionEvent.ALT_MASK));
-        menu_1_item_3.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_T, ActionEvent.ALT_MASK));
+        menu_1_item_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, ActionEvent.ALT_MASK));
+        menu_1_item_2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.ALT_MASK));
+        menu_1_item_3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, ActionEvent.ALT_MASK));
         // 2
-        menu_2_item_1.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_F, ActionEvent.CTRL_MASK));
-        menu_2_item_2.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_D, ActionEvent.ALT_MASK));
-        menu_2_item_3.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_V, ActionEvent.CTRL_MASK));
-        menu_2_item_4.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+        menu_2_item_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, ActionEvent.CTRL_MASK));
+        menu_2_item_2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+        menu_2_item_3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
+        menu_2_item_4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
         // 3
-        menu_3_item_2.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_B, ActionEvent.ALT_MASK));
-
+        menu_3_item_2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B, ActionEvent.ALT_MASK));
+        menu_3_item_3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.ALT_MASK));
 
         //// Add items to menu
-
         menu_1.add(menu_1_item_1);
         menu_1.add(menu_1_item_2);
         menu_1.add(menu_1_item_3);
@@ -242,140 +151,62 @@ public class MainJpanel extends JPanel
 
         menu_3.add(menu_3_item_1);
         menu_3.add(menu_3_item_2);
-
-        menu_4.add(menu_4_item_1_check);
+        menu_3.add(menu_3_item_3);
 
         menu_5_sub_1.add(menu_5_sub_1_check_1);
         menu_5_sub_1.add(menu_5_sub_1_check_2);
+        menu_5_sub_1.add(menu_5_sub_1_check_4);
+        menu_5_sub_1.add(menu_5_sub_1_check_3);
 
         menu_5_sub_2.add(menu_5_sub_2_check_1);
         menu_5_sub_2.add(menu_5_sub_2_check_2);
+        menu_5_sub_2.add(menu_5_sub_2_check_3);
 
         menu_5.add(menu_5_sub_1);
         menu_5.add(menu_5_sub_2);
-
         /// Add menu to menubar
         menubar_1.add(menu_1);
         menubar_1.add(menu_2);
         menubar_1.add(menu_3);
-        menubar_1.add(menu_4);
         menubar_1.add(menu_5);
-
 
         menubar_1.setBackground(Color.WHITE);
 
         add(menubar_1, BorderLayout.NORTH);
         add(label_1, BorderLayout.SOUTH);
         add(scroll_textArea_redactor_1, BorderLayout.CENTER);
-
         //actions
         menu_1_item_1.addActionListener(NewFile);
-        menu_1_item_2.addActionListener(OpenTxT); //++
+        menu_1_item_2.addActionListener(OpenTxT);
         menu_1_item_3.addActionListener(SaveTxT);
         menu_1_item_4.addActionListener(SaveAsTxT);
-        menu_1_item_5.addActionListener(new actions());
+        menu_1_item_5.addActionListener(CloseProgram);
 
         menu_2_item_1.addActionListener(FindTextJpanel);
         menu_2_item_2.addActionListener(ReplaceTextJpanel);
         menu_2_item_3.addActionListener(PasteText);
         menu_2_item_4.addActionListener(CopyTxT);
 
-
         menu_3_item_1.addActionListener(AboutProgram);
-        menu_3_item_2.addActionListener(new actions());
+        menu_3_item_2.addActionListener(FontTextJpanel);
+        menu_3_item_3.addActionListener(ProgramStyleJpanel);
 
-        menu_4_item_1_check.addActionListener(new actions());
+        menu_5_sub_1_check_1.addActionListener(SetCoding);
+        menu_5_sub_1_check_2.addActionListener(SetCoding);
 
-        menu_5_sub_1_check_1.addActionListener(new actions());
-        menu_5_sub_1_check_2.addActionListener(new actions());
+        menu_5_sub_2_check_1.addActionListener(SetCoding);
+        menu_5_sub_2_check_2.addActionListener(SetCoding);
 
-        menu_5_sub_2_check_1.addActionListener(new actions());
-        menu_5_sub_2_check_2.addActionListener(new actions());
+        menu_5_sub_1_check_3.addActionListener(SetCoding);
+        menu_5_sub_2_check_3.addActionListener(SetCoding);
 
-        //FileCoser Setting
-        fileChooser_open.setDialogTitle("Open File");
-        fileChooser_open.setAcceptAllFileFilterUsed(false);
-        fileChooser_open.addChoosableFileFilter(filter_1);
-
+        menu_5_sub_1_check_4.addActionListener(SetCoding);
         /// Coding sets  primary AUTO
         menu_5_sub_1_check_3.setState(true);
-        menu_5_sub_2_check_3.setState(true);
+        menu_5_sub_2_check_1.setState(true);
 
         menu_5_sub_1_check_3.setEnabled(false);
-        menu_5_sub_2_check_3.setEnabled(false);
-
-    }
-
-    class actions implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-
-            Object e_get = e.getSource();
-
-
-            /** Font size  */
-            if (e_get == menu_3_item_2)
-            {
-                Object size = 0;
-                Object[] possibilities = {11,14,16,18,20,22,26,28};
-                size = JOptionPane.showInputDialog(
-                        MainJpanel.this,
-                        "Please selected to size:\n",
-                        "Font size",
-                        JOptionPane.PLAIN_MESSAGE,
-                        null,
-                        possibilities,
-                        16);
-                if(size.hashCode() !=0)
-                {
-                    textArea_redactor_1.setFont(new Font("Arial", Font.PLAIN, size.hashCode()));
-                }
-            }
-
-            //5
-            /** Open ANSI  */
-            if(e_get==menu_5_sub_1_check_1)
-            {
-                code_open=codding[0];
-
-                menu_5_sub_1_check_1.setEnabled(false);
-                menu_5_sub_1_check_2.setEnabled(true);
-                menu_5_sub_1_check_2.setState(false);
-
-            }
-            /** Open UTF-8  */
-            if(e_get==menu_5_sub_1_check_2)
-            {
-                code_open=codding[1];
-
-                menu_5_sub_1_check_2.setEnabled(false);
-                menu_5_sub_1_check_1.setEnabled(true);
-                menu_5_sub_1_check_1.setState(false);
-
-            }
-            /** Save ANSI  */
-            if(e_get==menu_5_sub_2_check_1)
-            {
-                code_save=codding[0];
-
-                menu_5_sub_2_check_1.setEnabled(false);
-                menu_5_sub_2_check_2.setEnabled(true);
-                menu_5_sub_2_check_2.setState(false);
-
-            }
-            /** Save UTF-8  */
-            if(e_get==menu_5_sub_2_check_2)
-            {
-                code_save=codding[1];
-
-                menu_5_sub_2_check_2.setEnabled(false);
-                menu_5_sub_2_check_1.setEnabled(true);
-                menu_5_sub_2_check_1.setState(false);
-
-            }
-        }
+        menu_5_sub_2_check_1.setEnabled(false);
     }
 }
 

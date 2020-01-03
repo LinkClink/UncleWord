@@ -1,6 +1,7 @@
 package LogicJpanel;
 
 import logic.FileSet;
+import logic.ShowErrorDialog;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,12 +16,13 @@ public class NewFile implements ActionListener
     private String code_save;
     private String save_text;
 
-    int switch1;
+    private int switch1;
 
     FileSet fileSet = new FileSet();
+    ShowErrorDialog showErrorDialog = new ShowErrorDialog();
 
-    FileWriter fileWriter;
-    Writer out;
+    private FileWriter fileWriter;
+    private Writer out;
 
     public NewFile(JTextArea jTextArea)
     {
@@ -33,7 +35,7 @@ public class NewFile implements ActionListener
         buffer_file = fileSet.getBuffer_file();
         code_save = fileSet.getFile_code_save();
 
-            if (buffer_file != null)
+            if (buffer_file != null) // check file is open
             {
                 switch1 = JOptionPane.showConfirmDialog(
                         new JPanel(),
@@ -46,45 +48,41 @@ public class NewFile implements ActionListener
                     case 0: // save chL::
                     {
                         save_text = jTextArea.getText();
-                        try {
+                        try
+                        {
                             fileWriter = new FileWriter(buffer_file);
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                        try {
-                            out = new BufferedWriter(new OutputStreamWriter(
-                                    new FileOutputStream(buffer_file), code_save));
+                        } catch (IOException e1) { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                        try
+                        {
+                            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(buffer_file), code_save));
                         } catch (UnsupportedEncodingException e1)
-                        {
-                            e1.printStackTrace();
-                        } catch (FileNotFoundException e1)
-                        {
-                            e1.printStackTrace();
-                        }
+                        { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                        catch (FileNotFoundException e1)
+                        { showErrorDialog.show_dialog_0(e1.getMessage()); }
                         try
                         {
                             out.write(save_text);
                         } catch (IOException e1)
-                        {
-                            e1.printStackTrace();
-                        } finally
+                        { showErrorDialog.show_dialog_0(e1.getMessage()); }
+                        finally
                         {
                             try
                             {
                                 out.close();
                             } catch (IOException e1)
-                            {
-                                e1.printStackTrace();
-                            }
+                            { showErrorDialog.show_dialog_0(e1.getMessage()); }
                         }
+                        jTextArea.setText(null);
+                        fileSet.setBuffer_file(null);
                         break;
                     }
-                    case 1: // dont save ::
+                    case 1: // don't save ::
                     {
                         jTextArea.setText(null);
+                        fileSet.setBuffer_file(null);
                         break;
                     }
-                }///
+                }
             }
     }
 }

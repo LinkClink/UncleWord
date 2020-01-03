@@ -2,16 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1acdaa3d-9237-4cf8-afe1-efea54d6bdfa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/SetCoding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/ShowErrorDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogicJpanel/ProgramStyleJpanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubGuiLogic/ProgramStyle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/FontSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/MarkTextFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/OpenTxT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/OpenTxT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/FontTextJpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/FontTextJpanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/SetCoding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/LogicJpanel/SetCoding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FindTextJframe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FontTextJframe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/FontTextJframe.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ProgramStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ProgramStyle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/CopyText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/CopyText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGui/ReplaceTextJframe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/FindText$TextPaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/FindText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/FindText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/FontText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/FontText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/ReplaceText.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/SubGuiLogic/ReplaceText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel$actions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/gui/MainJpanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/UncleWord/logic/FileSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UncleWord/logic/FileSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/FontTextJpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/FontTextJpanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicJpanel/SetCoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicJpanel/SetCoding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/FindTextJframe.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/FindTextJframe.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/FindTextJframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/FindTextJframe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/FontTextJframe.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/FontTextJframe.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/FontTextJframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/FontTextJframe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SubGui/ProgramStyle.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/ProgramStyle.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/ProgramStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/ProgramStyle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGuiLogic/FindText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGuiLogic/FindText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGuiLogic/FontText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGuiLogic/FontText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MainJpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainJpanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/FileSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/FileSet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +63,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="179" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="EditorConfig" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -120,23 +150,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJframe.java</url>
-          <line>8</line>
+          <line>10</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>277</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>283</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>273</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/mainClass.java</url>
@@ -145,17 +160,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java</url>
-          <line>38</line>
+          <line>41</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -174,131 +189,136 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>272</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>271</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveAsTxT.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>274</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/MainJframe.java</url>
-          <line>13</line>
+          <line>15</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveTxT.java</url>
           <line>31</line>
-          <properties field="fileChooser_save" class="gui.MainJpanel" />
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/CloseProgram.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGui/FindTextJframe.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGui/ReplaceTextJframe.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/logic/MarkTextFunctions.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SetCoding.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>30</line>
-          <properties field="fileChooser_open" class="gui.MainJpanel" />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>33</line>
-          <properties field="filter_1" class="gui.MainJpanel" />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>110</line>
+          <line>71</line>
           <properties field="CopyTxT" class="gui.MainJpanel" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
           <line>17</line>
-          <properties field="code_open" class="LogicJpanel.CopyText" />
+          <properties field="code_save" class="LogicJpanel.CopyText" />
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/SubGuiLogic/ReplaceText.java</url>
-          <line>11</line>
-          <properties field="jTextArea" class="SubGuiLogic.ReplaceText" />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
-          <line>100</line>
-          <properties field="textArea_redactor_1" class="gui.MainJpanel" />
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/OpenTxT.java</url>
@@ -326,9 +346,51 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/SaveTxT.java</url>
-          <line>19</line>
+          <line>16</line>
           <properties field="fileSet" class="LogicJpanel.SaveTxT" />
           <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/SetCoding.java</url>
+          <line>25</line>
+          <properties field="fileSet" class="LogicJpanel.SetCoding" />
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/LogicJpanel/NewFile.java</url>
+          <line>20</line>
+          <properties field="fileSet" class="LogicJpanel.NewFile" />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>80</line>
+          <properties field="CloseProgram" class="gui.MainJpanel" />
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>12</line>
+          <properties field="fonts" class="SubGui.FontTextJframe" />
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>13</line>
+          <properties field="styles" class="SubGui.FontTextJframe" />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>29</line>
+          <properties field="font_textArea_redactor_1" class="gui.MainJpanel" />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/gui/MainJpanel.java</url>
+          <line>17</line>
+          <properties field="fontSet" class="gui.MainJpanel" />
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LogicJpanel/CopyText.java</url>
@@ -346,11 +408,35 @@
           </properties>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/SubGui/FindTextJframe.java</url>
+          <line>88</line>
+          <properties class="SubGui.FindTextJframe" method="getjTextArea">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/SubGui/FontTextJframe.java</url>
+          <line>96</line>
+          <properties class="SubGui.FontTextJframe" method="GeneratesFonts">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/SubGuiLogic/ProgramStyle.java</url>
+          <line>18</line>
+          <properties class="SubGuiLogic.ProgramStyle" method="ResetStyle">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/UncleWord$mainClass.ic" NAME="mainClass Coverage Results" MODIFIED="1573299978375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/UncleWord$mainClass.ic" NAME="mainClass Coverage Results" MODIFIED="1575814185656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>main.*</FILTER>
     </SUITE>
   </component>

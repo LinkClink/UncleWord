@@ -1,54 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="SubGui.ProgramStyle">
-  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="jpanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="494" height="94"/>
+      <xy x="20" y="31" width="491" height="104"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="34580" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Board:"/>
-        </properties>
-      </component>
-      <vspacer id="17887">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <component id="8b6ab" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Text:"/>
-        </properties>
-      </component>
-      <component id="9785a" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Menu:"/>
-        </properties>
-      </component>
-      <component id="964ec" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="f853f" class="javax.swing.JComboBox" binding="comboBox3" default-binding="true">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
       <component id="913ec" class="javax.swing.JButton" binding="resetButton" default-binding="true">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -65,11 +24,296 @@
           <text value="Apply"/>
         </properties>
       </component>
-      <component id="a5021" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+      <component id="f853f" class="javax.swing.JComboBox" binding="menucolor">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="black"/>
+            <item value="white"/>
+            <item value="red"/>
+            <item value="blue"/>
+            <item value="yellow"/>
+            <item value="cyan"/>
+            <item value="magenta"/>
+            <item value="gray"/>
+            <item value="green"/>
+          </model>
+        </properties>
+      </component>
+      <component id="9785a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Menu:"/>
+        </properties>
+      </component>
+      <component id="964ec" class="javax.swing.JComboBox" binding="textcolor">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="black"/>
+            <item value="white"/>
+            <item value="red"/>
+            <item value="blue"/>
+            <item value="yellow"/>
+            <item value="cyan"/>
+            <item value="magenta"/>
+            <item value="gray"/>
+            <item value="green"/>
+          </model>
+        </properties>
+      </component>
+      <component id="8b6ab" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Text:"/>
+        </properties>
+      </component>
+      <component id="a5021" class="javax.swing.JComboBox" binding="boardcolor">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="black"/>
+            <item value="white"/>
+            <item value="red"/>
+            <item value="blue"/>
+            <item value="yellow"/>
+            <item value="cyan"/>
+            <item value="magenta"/>
+            <item value="gray"/>
+            <item value="green"/>
+          </model>
+          <selectedIndex value="1"/>
+        </properties>
+      </component>
+      <component id="34580" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Board:"/>
+        </properties>
+      </component>
+      <component id="62689" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Font:"/>
+        </properties>
+      </component>
+      <component id="551e5" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Color:"/>
+        </properties>
+      </component>
+      <component id="647ae" class="javax.swing.JComboBox" binding="menufont">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Abadi MT Condensed Extra Bold"/>
+            <item value="Abadi MT Condensed Light"/>
+            <item value="Academy Engraved LET"/>
+            <item value="Al Bayan"/>
+            <item value="American Typewriter"/>
+            <item value="Andale Mono"/>
+            <item value="Apple Casual"/>
+            <item value="Apple Chancery"/>
+            <item value="Apple LiGothic"/>
+            <item value="Apple LiSung"/>
+            <item value="Apple Symbols"/>
+            <item value="AppleGothic"/>
+            <item value="AppleMyungjo"/>
+            <item value="Arial"/>
+            <item value="Arial Black"/>
+            <item value="Arial Hebrew"/>
+            <item value="Arial Narrow"/>
+            <item value="Arial Rounded MT Bold"/>
+            <item value="Ayuthaya"/>
+            <item value="Baghdad"/>
+            <item value="Bank Gothic"/>
+            <item value="Baskerville"/>
+            <item value="Baskerville Old Face"/>
+            <item value="Batang"/>
+            <item value="Bauhaus 93"/>
+            <item value="Bell MT"/>
+            <item value="Bernard MT Condensed"/>
+            <item value="BiauKai"/>
+            <item value="Big Caslon"/>
+            <item value="Bitstream Vera Sans"/>
+            <item value="Bitstream Vera Sans Mono"/>
+            <item value="Bitstream Vera Serif"/>
+            <item value="Blackmoor LET"/>
+            <item value="BlairMdITC TT"/>
+            <item value="Bodoni Ornaments ITC TT"/>
+            <item value="Bodoni SvtyTwo ITC TT"/>
+            <item value="Bodoni SvtyTwo OS ITC TT"/>
+            <item value="Bodoni SvtyTwo SC ITC TT"/>
+            <item value="Book Antiqua"/>
+            <item value="Bookman Old Style"/>
+            <item value="Bordeaux Roman Bold LET"/>
+            <item value="Bradley Hand ITC TT"/>
+            <item value="Braggadocio"/>
+            <item value="Britannic Bold"/>
+            <item value="Brush Script MT"/>
+            <item value="Calisto MT"/>
+            <item value="Century"/>
+            <item value="Century Gothic"/>
+            <item value="Century Schoolbook"/>
+            <item value="Chalkboard"/>
+            <item value="Charcoal CY"/>
+            <item value="Cochin"/>
+            <item value="Colonna MT"/>
+            <item value="Comic Sans MS"/>
+            <item value="Cooper Black"/>
+            <item value="Copperplate"/>
+            <item value="Copperplate Gothic Bold"/>
+            <item value="Copperplate Gothic Light"/>
+            <item value="Corsiva Hebrew"/>
+            <item value="Courier"/>
+            <item value="Courier New"/>
+            <item value="Cracked"/>
+            <item value="Curlz MT"/>
+            <item value="DecoType Naskh"/>
+            <item value="Desdemona"/>
+            <item value="Devanagari MT"/>
+            <item value="Dialog"/>
+            <item value="DialogInput"/>
+            <item value="Didot"/>
+            <item value="Edwardian Script ITC"/>
+            <item value="Engravers MT"/>
+            <item value="Euphemia UCAS"/>
+            <item value="Eurostile"/>
+            <item value="Footlight MT Light"/>
+            <item value="Futura"/>
+            <item value="Garamond"/>
+            <item value="GB18030 Bitmap"/>
+            <item value="Geeza Pro"/>
+            <item value="Geneva"/>
+            <item value="Geneva CY"/>
+            <item value="Georgia"/>
+            <item value="Gill Sans"/>
+            <item value="Gill Sans Ultra Bold"/>
+            <item value="Gloucester MT Extra Condensed"/>
+            <item value="Goudy Old Style"/>
+            <item value="Gujarati MT"/>
+            <item value="Gulim"/>
+            <item value="Gurmukhi MT"/>
+            <item value="Haettenschweiler"/>
+            <item value="Handwriting - Dakota"/>
+            <item value="Harrington"/>
+            <item value="Hei"/>
+            <item value="Helvetica"/>
+            <item value="Helvetica CY"/>
+            <item value="Helvetica Neue"/>
+            <item value="Herculanum"/>
+            <item value="Hiragino Kaku Gothic Pro"/>
+            <item value="Hiragino Kaku Gothic Std"/>
+            <item value="Hiragino Maru Gothic Pro"/>
+            <item value="Hiragino Mincho Pro"/>
+            <item value="Hoefler Text"/>
+            <item value="Impact"/>
+            <item value="Imprint MT Shadow"/>
+            <item value="InaiMathi"/>
+            <item value="Jazz LET"/>
+            <item value="Kai"/>
+            <item value="Kino MT"/>
+            <item value="Krungthep"/>
+            <item value="KufiStandardGK"/>
+            <item value="LiHei Pro"/>
+            <item value="LiSong Pro"/>
+            <item value="Lucida Blackletter"/>
+            <item value="Lucida Bright"/>
+            <item value="Lucida Calligraphy"/>
+            <item value="Lucida Fax"/>
+            <item value="Lucida Grande"/>
+            <item value="Lucida Handwriting"/>
+            <item value="Lucida Sans"/>
+            <item value="Lucida Sans Typewriter"/>
+            <item value="Marker Felt"/>
+            <item value="Matura MT Script Capitals"/>
+            <item value="Mistral"/>
+            <item value="Modern No. 20"/>
+            <item value="Mona Lisa Solid ITC TT"/>
+            <item value="Monaco"/>
+            <item value="Monospaced"/>
+            <item value="Monotype Corsiva"/>
+            <item value="Monotype Sorts"/>
+            <item value="MS Gothic"/>
+            <item value="MS Mincho"/>
+            <item value="MS PGothic"/>
+            <item value="MS PMincho"/>
+            <item value="Mshtakan"/>
+            <item value="MT Extra"/>
+            <item value="Nadeem"/>
+            <item value="New Peninim MT"/>
+            <item value="News Gothic MT"/>
+            <item value="Onyx"/>
+            <item value="OpenSymbol"/>
+            <item value="Optima"/>
+            <item value="Osaka"/>
+            <item value="Palatino"/>
+            <item value="Papyrus"/>
+            <item value="Party LET"/>
+            <item value="Perpetua Titling MT"/>
+            <item value="Plantagenet Cherokee"/>
+            <item value="Playbill"/>
+            <item value="PMingLiU"/>
+            <item value="PortagoITC TT"/>
+            <item value="Princetown LET"/>
+            <item value="Raanana"/>
+            <item value="Rockwell"/>
+            <item value="Rockwell Extra Bold"/>
+            <item value="SansSerif"/>
+            <item value="Santa Fe LET"/>
+            <item value="Sathu"/>
+            <item value="Savoye LET"/>
+            <item value="SchoolHouse Cursive B"/>
+            <item value="SchoolHouse Printed A"/>
+            <item value="Serif"/>
+            <item value="Silom"/>
+            <item value="SimSun"/>
+            <item value="Skia"/>
+            <item value="Snell Roundhand"/>
+            <item value="Stencil"/>
+            <item value="STFangsong"/>
+            <item value="STHeiti"/>
+            <item value="STKaiti"/>
+            <item value="Stone Sans ITC TT"/>
+            <item value="Stone Sans Sem ITC TT"/>
+            <item value="STSong"/>
+            <item value="Symbol"/>
+            <item value="Synchro LET"/>
+            <item value="Tahoma"/>
+            <item value="Thonburi"/>
+            <item value="Times"/>
+            <item value="Times New Roman"/>
+            <item value="Trebuchet MS"/>
+            <item value="Type Embellishments One LET"/>
+            <item value="Verdana"/>
+            <item value="Webdings"/>
+            <item value="Wide Latin"/>
+            <item value="Wingdings"/>
+            <item value="Wingdings 2"/>
+            <item value="Wingdings 3"/>
+            <item value="Zapf Dingbats"/>
+            <item value="Zapfino"/>
+          </model>
+        </properties>
       </component>
     </children>
   </grid>
