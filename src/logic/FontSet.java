@@ -28,14 +28,6 @@ public class FontSet
         FontSet.primary_font_style = primary_font_style;
     }
 
-    public String[] getFonts() {
-        return fonts;
-    }
-
-    static String primary_font = "Consolas";
-    static int primary_font_size = 16;
-    static int primary_font_style = 0;
-
     public String getPrimary_board_color() {
         return primary_board_color;
     }
@@ -51,6 +43,14 @@ public class FontSet
     public String getPrimary_color_menu() {
         return primary_color_menu;
     }
+
+    public String[] getFonts() {
+        return fonts;
+    }
+
+    static String primary_font = "Consolas";
+    static int primary_font_size = 16;
+    static int primary_font_style = 0;
 
     static String primary_font_menu = "arial";
 

@@ -9,7 +9,6 @@ import java.util.Arrays;
 
 public class FontTextJframe extends  JFrame
 {
-
     String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
     String styles[] = {"Plain","Bold","Italic"};
 
@@ -47,12 +46,12 @@ public class FontTextJframe extends  JFrame
         jFrame.setSize(450,300);
         jFrame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width  - 450) / 2,
                 (Toolkit.getDefaultToolkit().getScreenSize().height - 300) / 2);
-
     }
 
     public FontTextJframe()
     {
-        jFrame.addWindowListener(new WindowAdapter() {
+        jFrame.addWindowListener(new WindowAdapter()
+        {
             @Override
             public void windowActivated(WindowEvent e)
             {

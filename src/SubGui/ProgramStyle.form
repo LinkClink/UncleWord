@@ -313,6 +313,7 @@
             <item value="Zapf Dingbats"/>
             <item value="Zapfino"/>
           </model>
+          <selectedIndex value="13"/>
         </properties>
       </component>
     </children>

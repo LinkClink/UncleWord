@@ -10,7 +10,6 @@ import java.io.*;
 
 public class NewFile implements ActionListener 
 {
-
     private JTextArea jTextArea;
     private String buffer_file;
     private String code_save;

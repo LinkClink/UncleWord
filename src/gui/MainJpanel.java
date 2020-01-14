@@ -2,9 +2,7 @@
 
 package gui;
 import LogicJpanel.*;
-import SubGui.ProgramStyle;
 import logic.FontSet;
-import logic.ShowTimeClock;
 
 import javax.swing.*;
 
@@ -23,12 +21,8 @@ public class MainJpanel extends JPanel
     String date_y_m_d = simpleDateFormat.format(new Date());
 
     Font font_menu_1 = new Font("Arial", Font.PLAIN, 11);
-
     Font font_menuitem_1 = new Font("Arial", Font.PLAIN, 10);
-
-    /////
     Font font_textArea_redactor_1 = new Font(fontSet.getPrimary_font(), fontSet.getPrimary_font_style(), fontSet.getPrimary_font_size());
-
     Font font_label_1 = new Font("Arial", Font.PLAIN, 14);
 
     JMenuBar menubar_1 = new JMenuBar();
@@ -84,12 +78,9 @@ public class MainJpanel extends JPanel
     ActionListener SetCoding = new SetCoding(menu_5_sub_1_check_1,menu_5_sub_2_check_1,menu_5_sub_1_check_2,
                                              menu_5_sub_2_check_2,menu_5_sub_1_check_3,menu_5_sub_2_check_3,menu_5_sub_1_check_4);
 
-
     public MainJpanel()
     {
         //Set Colors
-
-
         textArea_redactor_1.setBackground(Color.WHITE);
         textArea_redactor_1.setForeground(Color.BLACK);
 

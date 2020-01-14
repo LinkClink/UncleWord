@@ -1,9 +1,6 @@
 package gui;
 
-import logic.ShowTimeClock;
-
 import javax.swing.*;
-
 import java.awt.*;
 
 public class MainJframe extends JFrame
@@ -24,6 +21,5 @@ public class MainJframe extends JFrame
         setVisible(true);
 
         add(panel);
-
     }
 }
