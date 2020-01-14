@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class SaveAsTxT extends Component implements ActionListener
 {
     private JTextArea jTextArea;
@@ -22,5 +21,4 @@ public class SaveAsTxT extends Component implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     { SaveFileFunctions.SaveAs(jTextArea); }
-
 }

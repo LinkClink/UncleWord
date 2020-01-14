@@ -1,6 +1,5 @@
 package SubGuiLogic;
 
-import SubGui.ReplaceTextJframe;
 import logic.FileSet;
 import logic.MarkTextFunctions;
 
@@ -56,6 +55,5 @@ public class ReplaceText
             } else fileSet.setMark_text_position(0);
         }
     }
-
 }
 

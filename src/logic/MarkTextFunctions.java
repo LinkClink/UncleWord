@@ -118,7 +118,6 @@ public class MarkTextFunctions
         {
             textComp = jTextArea;
             ColorSet = new TextPaint(CheckColor(color));
-
             pos = fileSet.getMark_text_position();
 
             try

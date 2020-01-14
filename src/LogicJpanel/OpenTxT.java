@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 public class OpenTxT extends Component implements ActionListener
-
 {
     private int save_dialog;
     private int result;
@@ -148,7 +147,6 @@ public class OpenTxT extends Component implements ActionListener
                     fileInputStream_1.close();
                 } catch (IOException e1)
                 { showErrorDialog.show_dialog_0(e1.getMessage()); }
-
             }
     }
 }

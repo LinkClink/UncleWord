@@ -85,10 +85,8 @@ public class FindTextJframe extends JFrame
             }
         });
     }
-
     public JTextArea getjTextArea()
     {
         return jTextArea;
     }
-
 }

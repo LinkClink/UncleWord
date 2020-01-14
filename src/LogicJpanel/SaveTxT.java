@@ -2,12 +2,10 @@ package LogicJpanel;
 
 import logic.FileSet;
 import logic.SaveFileFunctions;
-import logic.ShowErrorDialog;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
 
 public class SaveTxT implements ActionListener
 {

@@ -22,8 +22,6 @@ public class SaveFileFunctions extends JPanel
     private JFileChooser fileChooser = new JFileChooser();
     private FileWriter fileWriter = null;
 
-
-
     public void SaveAs(JTextArea jTextArea)
     {
         code_save = fileSet.getFile_code_save();

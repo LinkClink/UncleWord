@@ -97,12 +97,10 @@ public class ReplaceTextJframe extends JFrame
     {
         return windowsVisible;
     }
-
     public void onClose()
     {
      windowsVisible = false;
     }
-
     public JTextArea getjTextArea()
     {
         return jTextArea;

@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PasteText implements ActionListener
-
 {
     private JTextArea jTextArea;
 

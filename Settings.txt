@@ -1,0 +1,3 @@
+TextFont:Arial
+TextSize:16
+TextStyle:Plain
