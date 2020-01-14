@@ -1,5 +1,5 @@
 # Project Title:
-* UncleWord - text redactor in Java 12
+* UncleWord - text redactor in Java 13
 
 # Getting Started:
 * Only IntelliJ IDE studio
