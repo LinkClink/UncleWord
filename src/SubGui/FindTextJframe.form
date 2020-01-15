@@ -71,7 +71,7 @@
             <item value="gray"/>
             <item value="green"/>
           </model>
-          <selectedIndex value="0"/>
+          <selectedIndex value="1"/>
         </properties>
       </component>
       <component id="f3ba" class="javax.swing.JLabel">

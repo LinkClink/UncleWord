@@ -3,13 +3,16 @@
 package gui;
 import LogicJpanel.*;
 import logic.FontSet;
+import logic.SetTime;
 
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+
 
 public class MainJpanel extends JPanel
 {
@@ -62,6 +65,8 @@ public class MainJpanel extends JPanel
     JScrollPane scroll_textArea_redactor_1 = new JScrollPane(textArea_redactor_1);
 
     JLabel label_1 = new JLabel(date_y_m_d);
+
+    SetTime setTime = new SetTime(label_1);
 
     ActionListener CopyTxT = new CopyText(textArea_redactor_1);
     ActionListener FindTextJpanel = new FindTextJpanel(textArea_redactor_1);
@@ -198,6 +203,8 @@ public class MainJpanel extends JPanel
 
         menu_5_sub_1_check_3.setEnabled(false);
         menu_5_sub_2_check_1.setEnabled(false);
+
+        setTime.start();
     }
 }
 
