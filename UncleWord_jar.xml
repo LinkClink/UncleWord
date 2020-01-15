@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UncleWord:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UncleWord_jar</output-path>
+    <root id="archive" name="UncleWord.jar">
+      <element id="module-output" name="UncleWord" />
+    </root>
+  </artifact>
+</component>
